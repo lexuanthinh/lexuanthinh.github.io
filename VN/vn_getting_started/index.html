@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Home - DSSAMA Docs</title>
+        <link href="../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../..">DSSAMA Docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="./">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../EN/en_getting_started/">Home</a>
+</li>
+                                    
+<li >
+    <a href="../../EN/en_index/">ENINDEX</a>
+</li>
+                                    
+<li >
+    <a href="../../EN/en_tutorial/">ENTUTORIAL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Vietnamese <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li class="active">
+    <a href="./">Home</a>
+</li>
+                                    
+<li >
+    <a href="../vn_index/">Index</a>
+</li>
+                                    
+<li >
+    <a href="../vn_machine_learning_pipeline/">MachineLearningPipeline</a>
+</li>
+                                    
+<li >
+    <a href="../vn_tutorial/">Tutorial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../EN/en_tutorial/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../vn_index/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#huong-dan-su-dung-dssama-cho-bai-toan-phan-tich-du-lieu">Hướng dẫn sử dụng DSSAMA cho bài toán phân tích dữ liệu</a></li>
+            <li><a href="#welcome-to-dssama">Welcome to DSSAMA</a></li>
+            <li><a href="#1-getting-started">1. GETTING STARTED</a></li>
+            <li><a href="#2-workspace">2. WORKSPACE</a></li>
+            <li><a href="#3-workspace-server">3. WORKSPACE SERVER</a></li>
+            <li><a href="#4-project">4. PROJECT</a></li>
+            <li><a href="#4-data-intergraton-and-storage">4. DATA INTERGRATON AND STORAGE</a></li>
+            <li><a href="#5-user-assign-user">5. USER - ASSIGN USER</a></li>
+            <li><a href="#6-flow">6. FLOW</a></li>
+            <li><a href="#7-simple-flow">7. SIMPLE FLOW</a></li>
+            <li><a href="#8-machine-learning-pipeline">8. MACHINE LEARNING PIPELINE</a></li>
+            <li><a href="#9-tutorial">9. TUTORIAL</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="huong-dan-su-dung-dssama-cho-bai-toan-phan-tich-du-lieu">Hướng dẫn sử dụng DSSAMA cho bài toán phân tích dữ liệu</h1>
+<p>Ở chương này , chúng tôi sẽ hướng dẫn người dùng sử dụng ứng dụng DSSAMA - Nền tảng để quản lý và triển khai các dự án Phân tích dữ liệu lớn để phân tích bài toán Titanic trên Kaggle.</p>
+<h2 id="welcome-to-dssama"><strong>Welcome to DSSAMA</strong></h2>
+<h2 id="1-getting-started">1. GETTING STARTED</h2>
+<h3 id="nguoi-dung-moi-tao-tai-khoan"><strong>NGƯỜI DÙNG MỚI - TẠO TÀI KHOẢN</strong></h3>
+<ul>
+<li>
+<p>Với người dùng lần đầu sử dụng, việc đầu tiên cần làm là đăng ký tài khoản DSSAMA tại <a href="https://dashboard.dssama.com">DSSAMA</a> </p>
+</li>
+<li>
+<p>Nếu chưa có tài khoản DSSAMA, hãy click vào <em>Sign Up</em>
+    <img alt="hinh1.dangky" src="https://i.imgur.com/OVUzHhT.png" /></p>
+</li>
+<li>
+<p>Điền đầy đủ các thông tin và click nút Sign up. Đăng nhập vào email đăng ký tài khoản để lấy mã token.
+    <img alt="hinh2." src="https://i.imgur.com/zeC3aDc.png" /></p>
+</li>
+<li>
+<p>Copy mã token được gửi vào mail đăng ký và paste vào <em>Token code</em> và click <em>Confirm</em>. Khi đó, người dùng đã hoàn thành các bước đăng ký tài khoản và có thể dùng tài khoản đó đăng nhập. Người dùng lưu ý thời gian nhập mã code.
+    <img alt="hinh3." src="https://i.imgur.com/92fvhHy.png" /></p>
+</li>
+</ul>
+<h3 id="ang-nhap"><strong>ĐĂNG NHẬP</strong></h3>
+<ul>
+<li>Đăng nhập vào hệ thống <a href="https://dashboard.dssama.com">DSSAMA</a> trên trình duyệt nhập email người dùng đã đăng ký trước đó và password. Sau khi đăng nhập vào hệ thống, giao diện làm việc của hệ thống DSSAMA như sau.
+    <img alt="hinh4.dangnhap" src="https://i.imgur.com/xTLXFC1.png" /></li>
+</ul>
+<h2 id="2-workspace">2. WORKSPACE</h2>
+<ul>
+<li>
+<p>Sau khi đăng nhập vào hệ thống DSSAMA, người dùng cần tạo không gian làm việc để làm việc với dữ liệu trên đó. Mỗi tài khoản được cung cấp một default workspace server miễn phí và bảo mật.Nếu muốn tạo hơn một Workspace, người dùng nên dùng thêm workspace server.</p>
+<p><img alt="Hình 7. Tạo workspace" src="https://i.imgur.com/28W2SwKg.png" /></p>
+<p>Mỗi tài khoản được cung cấp một default workspace server miễn phí và bảo mật.Nếu muốn tạo hơn một Workspace, người dùng nên dùng thêm workspace server.
+<img alt="hinh6.workspace" src="https://i.imgur.com/qfHOTvQ.png" /></p>
+<p>Sau khi click "Save" Workpsace được tạo, đó là không gian mà chúng ta sẽ làm việc trên đó.</p>
+</li>
+</ul>
+<h2 id="3-workspace-server">3. WORKSPACE SERVER</h2>
+<h2 id="4-project">4. PROJECT</h2>
+<ul>
+<li>Project trong DSSAMA là nơi quản lý, lưu trữ các Flow (luồng công việc) của từng bài toán , dự án cụ thể.</li>
+<li>
+<p>Để thêm mới <strong>Project</strong>, click vào Workspace của người dùng để vào không gian làm việc, sau đó click nút thêm mới là biểu tượng dấu "+"</p>
+<p><img alt="Hình 2. Tạo mới Project" src="https://i.imgur.com/F1DsdkBg.png" /></p>
+<p>Sau khi click "Save" , data source được lưu và có thể dử dụng.</p>
+</li>
+</ul>
+<h3 id="task"><strong>Task</strong></h3>
+<ul>
+<li><strong>Task</strong> là nơi người dùng quản lý, phân chia các công việc trong dự án.</li>
+</ul>
+<h3 id="timeline-history"><strong>Timeline (History)</strong></h3>
+<ul>
+<li>Hiển thị lịch sử người dùng thao tác trong project</li>
+</ul>
+<h2 id="4-data-intergraton-and-storage">4. DATA INTERGRATON AND STORAGE</h2>
+<ul>
+<li>
+<p><strong>Data source</strong> là phần chứa dataset sử dụng cho các Project người dùng cần làm. Tại đây , ta tạo với datasource tương ứng với các tập dataset cần phân tích. Click tạo mới data source tại phần List of data source, điền các thông số cần điển cho tập dữ liệu.  Titanic tải trên Kaggle.</p>
+<ul>
+<li>Data source : Chọn <em>Tabular</em> cho dữ liệu dạng bảng của Titanic</li>
+<li>Source type : Chọn <em>Csv file</em> , với file dữ liệu đưa lên là file train.csv trên Kaggle đã tải về và lưu trong máy người dùng.</li>
+<li>Choose File : Tải file dữ liệu trong máy lên.</li>
+<li>ID column : Lựa chọn cột chứa ID . Trong file này , cột chứa ID là *PassengerId</li>
+<li>Label column : Lựa chọn cột người dùng muốn gán nhãn. Trong bài toán này , chúng ta lựa chọn cột <em>Survived</em>
+   <img alt="Add a new data source " src="https://i.imgur.com/enF9q98.png" />
+<em>Hình 3. Tạo mới data source.</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="5-user-assign-user">5. USER - ASSIGN USER</h2>
+<ul>
+<li>Trong các dự án làm nhóm, <em>List of assign user</em> là danh sách các thành viên mà người dùng gán công việc  trong dự án</li>
+</ul>
+<h2 id="6-flow">6. FLOW</h2>
+<ul>
+<li>
+<p>Flow là nơi trực tiếp người dùng làm việc với các tập dữ liệu. Ta tạo mới Flow cho từng bài toán phân tích dữ liệu cụ thể.</p>
+<p><img alt="Add a new flow" src="https://i.imgur.com/NBmuJGd.png" /></p>
+<p><em>Hình 4. Tạo mới Flow</em></p>
+</li>
+</ul>
+<h2 id="7-simple-flow">7. SIMPLE FLOW</h2>
+<p><img alt="Hình 5." src="https://i.imgur.com/aKNe0qqg.png" />
+<em>Hình 5. các thành phần chính trong màn hình flow</em>
+Sau khi tạo mới Flow để làm việc, click vào Flow vừa tạo để vào làm việc với Flow - tạo các luồng xử lý dữ liệu.</p>
+<p>DSSAMA Flow - giao diện làm việc trực tiếp được tạo thành từ các thành phần sau:<br />
+- Dataflow Editor: vùng Grids để tạo mới các luồng flow và chỉnh sửa các luồng flow hiện đang hoạt động.</p>
+<ul>
+<li>
+<p>Stage Repository: Danh mục Stage có sẵn trong nền tảng DSSAMA được lưu trữ tại đây, các Stage tương ứng với các thuật toán học máy xử lý dữ liệu, được tổ chức theo cây thư mục để dễ tìm kiếm.</p>
+</li>
+<li>
+<p>Stage Propeties : Các thuộc tính của Stage, sau khi đưa Stage vào vùng Grids, người dùng cần click vào Stage để chỉnh sửa các thuộc tính để phù hợp với mục đích xử lý dữ liệu cho bài toán.</p>
+</li>
+<li>
+<p>Console logs: Hiển thị thông báo thực thi cho biết kết quả thực thi các Flow.</p>
+</li>
+</ul>
+<h3 id="stage-va-flow">Stage và Flow</h3>
+<ul>
+<li>
+<p>Trong nền tảng phân tích dữ liệu DSSAMA , các tác vụ xử lý dữ liệu riêng lẻ được thể hiện bằng các Stage. </p>
+</li>
+<li>
+<p>Mỗi Stage được xếp trong phần Stage Repository, khi đưa sang vùng Grids, mỗi Stage được hiển dưới dạng hộp icon vuông có đầu vào và đầu ra, nhưng với Stage Input, và Stage xử lý dữ liệu cuối là chỉ có đầu vào hoặc đầu ra. Đầu vào là dữ liệu mà nút xử lý và đàu ra là các bộ dữ liệu kết quả. Mỗi Stage có phần cài đặt thuộc tính xuất hiện khi click vào Stage, chúng ta có thể điều chỉnh các thuộc tính này để phù hợp với dữ liệu vào , và ra của Stage và phù hợp với Flow xử lý bài toán. Click lại và Stage đã cài đặt , click <strong>Run</strong> trên thanh công cụ.</p>
+</li>
+<li>
+<p>Sau khi chạy xong, kết quả ta nhận được là một cửa sổ hiển thị dữ liệu output của Stage đó. Mỗi stage hoàn thành chạy xong đều có dấu tích xanh ở góc phải bên dưới các hộp icon.</p>
+<p><img alt="Hình 6." src="https://i.imgur.com/9YKmznt.png" /></p>
+<p><em>Hình . Stage và thuộc tính của Stage trong Flow</em></p>
+</li>
+</ul>
+<h2 id="8-machine-learning-pipeline">8. MACHINE LEARNING PIPELINE</h2>
+<h3 id="data-import-and-manipulation"><strong>Data Import and manipulation</strong></h3>
+<h3 id="import-du-lieu">Import dữ liệu</h3>
+<p>Stage Input là Stage import dữ liệu từ data source.
+Với mỗi dạng data source sẽ có Stage import dữ liệu riêng , có các Stage Input chính sau:</p>
+<p><img alt="" src="https://i.imgur.com/o6Andtg.png" /></p>
+<ul>
+<li>
+<p><code>Tabular Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng bảng.</p>
+</li>
+<li>
+<p><code>Text Input</code> : Stage input tương dữ liệu nguồn sử dụng là dạng text.</p>
+</li>
+<li>
+<p><code>Timeseries Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng chuỗi thời gian.</p>
+</li>
+<li>
+<p><code>Image Input</code> : Stage input cho nguồn dữ liệu sử dụng là dạng ảnh.</p>
+</li>
+</ul>
+<p>Ngoài các Stage input trên , DSSAMA có thêm <em>Image Input for Classification</em>, <em>Image Input for Segmentation</em> cho các nguồn dữ liệu dạng ảnh khác.</p>
+<h3 id="data-preprocessing"><strong>Data Preprocessing</strong></h3>
+<h3 id="supervised-modeling"><strong>Supervised Modeling</strong></h3>
+<h3 id="unsupervised-modeling"><strong>Unsupervised Modeling</strong></h3>
+<h3 id="evaluation"><strong>Evaluation</strong></h3>
+<h2 id="9-tutorial">9. TUTORIAL</h2>
+<h3 id="predict-survival-titanic-passengers"><strong>Predict survival Titanic passengers</strong></h3>
+<p><strong>Bài toán Titanic điển hình trong phân tích dự đoán dữ liệu</strong></p>
+<p><code>Bài toán</code> : Vào ngày 15 tháng 4 năm 1912, thảm họa Titanic là một thảm họa nổi tiếng nhất trong lịch sử, Tàu RMS Titanic bị chìm sau khi va chạm với tảng băng đã cướp đi 1502 sinh mạng trên tổng số 2224 hành khách và thủy thủ đoàn, trôi với số liệu thu thâp được qua thảm họa bao gồm số lượng hành khách.</p>
+<p>Bài toán là cho một lượng dữ liệu training cho trước của 892 hành khách bao gồm các thông tin như tên, giới tính, tuổi, mã số vé, cabin, giá vé, quan hệ nhân thân, số lương trẻ em, họ hàng, cha mẹ đi cùng, còn sống hay đã tử nạn. </p>
+<p><code>Output</code>: Dữ liệu đầu ra là đưa ra dự đoán về khả năng tử nạn của các hành khách còn lại dựa trên những yếu tố biết trước như tên, tuổi, giới tính, số người đi cùng, vị trí phòng v…v.</p>
+<p><code>Ý nghĩa</code>: Bài toán cho phép chúng ta có thể dựa vào đó để dự đoán khả năng sống sót của một người dựa trên một thảm họa từ đó có thể rút ra những kinh nghiệm trong các chuyến hành trình trong tương lai, Có thể là thiết kế lại tàu một cách an toàn hơn, dịch vụ chăm sóc, cảnh báo v..v</p>
+<p><code>Phân tích</code>: Có thể dễ nhận thấy đây là một bài Two-Class Classification với kết quả đầu ra là NOT_SUVIVAL hoặc SUVIVAL.</p>
+<p>Với một bài toán Two-Class Classification như thế này có thể giải bằng nhiều cách và nhiều thuật toán khác nhau như Bayes, Decision Tree, Decision Forest …</p>
+<p>Từ một mẫu dữ liệu RMS Titanic, chúng ta có thể thấy các thuộc tính thể hiển cho mỗi hành khách trên tàu:</p>
+<p><code>Survial</code> : Kết quả sống sót (0 = Không; 1 = Có)</p>
+<p><code>Pclass</code> : Lớp kinh tế xã hội (1 = Tầng lớp thượng lưu; 2 = Tầng lớp trung lưu; 3 = Các tầng lớp thấp)</p>
+<p><code>Name</code> : Tên của hành khách</p>
+<p><code>Sex</code> : Giới tính của hành khách</p>
+<p><code>Age</code> : Tuổi của hành khách (30% dữ liệu tuổi của hành khách bị khuyết)</p>
+<p><code>SibSp</code> : Số anh chị em ruột và vợ / chồng của hành khách trên tàu</p>
+<p><code>Parch</code>: Số phụ huynh và trẻ em của hành khách trên tàu</p>
+<p><code>Ticket</code> : Số hiệu vé của hành khách</p>
+<p><code>Fare</code>: Giá vé hành khách trả</p>
+<p><code>Cabin</code>: số cabin của hành khách (Một số mục bị khuyết dữ liệu)</p>
+<p><code>Embarked</code> : Cảng đón khách của hành khách (C = Cherbourg; Q = Queenstown; S = Southampton)</p>
+<h4 id="get-started"><strong><em>Get started</em></strong></h4>
+<h5 id="buoc-1-tao-moi-flow-classification-for-titanic-e-lam-viec-voi-bai-toan-titanic-su-dung-cac-mo-hinh-hoc-may-phan-lop"><em>Bước 1</em>: Tạo mới Flow Classification for Titanic để làm việc với bài toán Titanic sử dụng các Mô hình học máy phân lớp.</h5>
+<p><img alt="Hình 5. Flow Classification for Titanic" src="https://i.imgur.com/Zy7cHFR.png" />
+    <em>Hình 5. Flow Cassification for Titanic vừa tạo</em></p>
+<p>Click vào Flow Classification for Titanic , giao diện làm việc trực tiếp - DSSAMA Flow hiển thị như trong hình 5.<br />
+<img alt="Hình 6. Flow Cassification for Titanic" src="https://i.imgur.com/kaj6ldHg.png" /></p>
+<p><em>Hình 6. Giao diện làm việc trực tiếp Flow Cassification for Titanic</em></p>
+<h5 id="buoc-2-import-du-lieu"><em>Bước 2: Import dữ liệu</em></h5>
+<p>Với bài toán Titanic, data source ban đầu khởi tạo là dạng Tabular, nên khi import dữ liệu , ta sử dụng Stage Tabular Input. Click lựa chọn Stage Tabular Input ở Stage Repository, đưa sang Dataflow Editor, khi đó hiển thị cột Stage Properties bên phải màn hình, ta tùy chỉnh dữ liệu sử dụng cho phù hợp.
+    Quan sát hình ảnh </p>
+<p><img alt="Hình 7. Tabular Input" src="https://i.imgur.com/ORQ9pGE.png" /></p>
+<ul>
+<li>
+<p>Dataset : lựa chọn tập dữ liệu Titanic</p>
+</li>
+<li>
+<p>Selected Comun : lựa lựa chọn các cột sẽ sử dụng trong quá trình xử lý dữ liệu. Ở ví dụ này, các cột thuộc tính được lựa chọn để đưa vào phân tích không có thuộc tính <code>Name</code>, <code>Ticket</code> và <code>Cabin</code>: <code>PClass</code>, <code>Sex</code>, <code>Age</code>, <code>SibSp</code>, <code>Parch</code>, <code>Fare</code>, <code>Embarked</code>. Người dùng cũng có thể lựa chọn tất cả các cột dữ liệu để phân tích.</p>
+</li>
+<li>
+<p>Click lại vào Stage và click <code>Run</code> để kiểm tra dữ liệu import đã chính xác chưa.</p>
+</li>
+<li>
+<p>Sau khi chạy, ta được bảng dữ liệu vào được biểu diễn dưới dạng đồ thị và hiển thị bảng dữ liệu vào như sau: 
+    <img alt="Hiển thị chạy input" src="https://i.imgur.com/vBfA88E.png" /></p>
+</li>
+</ul>
+<h5 id="buoc-3-xu-ly-du-lieu-khuyet">Bước 3: Xử lý dữ liệu khuyết</h5>
+<p>Trong bài toán con tàu RMS Titanic, cột dữ liệu <code>Age</code> và <code>Embarked</code> khuyết một số đơn vị dữ liệu nên cần xử lý các dữ liệu khuyết đó. </p>
+<p>Để xử lý cột dữ liệu <code>Age</code>, chọn Stage <em>Simple Imputer Transformer</em> trong mục <em>Transformer</em> của <em>Scikitsama.ml</em> đưa vào Dataflow Editor.Tạo kết nối output của Stage Tabular Input là input của Stage Simple Imputer Transformer Cài đặt thuộc tính để xử lý Handle missing data như hình 8 dưới đây:</p>
+<p><img alt="Hình 8." src="https://i.imgur.com/5cf1Nvw.png" /></p>
+<ul>
+<li>
+<p><em>Selected column</em>: Lựa chọn cột cần xử lý Handle missing date. Lưu ý kiểu dữ liệu của cột cần xử lý Handle missing data.</p>
+</li>
+<li>
+<p><em>Missing Values</em> : Tùy chọn <em>np.nan</em> hoặc <em>None</em>. Tùy vào dataset đưa vào có phần dữ liệu bị khuyết được mã dưới dạng nào thì ta chọn dạng đó: trong bai toán này, dữ liệu khuyết để là NaN. DSSAMA platform hỗ trợ các bộ dữ liệu có phần dữ liệu bị khuyết được mà hóa dưới dạng khoảng trắng(None) hoặc NaN.</p>
+</li>
+<li>
+<p><em>Strategy</em>: lựa chọn phương pháp Handle missing data trong các phương pháp:</p>
+<ul>
+<li><em>mean</em>: Lấp đầy dữ liệu khuyết bằng giá trị trung bình.</li>
+<li><em>median</em>: Lấp đầy dữ liệu khuyết bằng giá trị trung vị.</li>
+<li><em>most_frequent</em> : Lấp đầy dữ liệu khuyết bằng dữ liệu có tần số cao nhất.</li>
+<li><em>constant</em>: Lấp đầy dữ liệu khuyết bằng hằng số, hằng số điền vào ô textbox <em>Fill Value</em></li>
+<li><em>Fill Value</em> : Điền hằng số lấp đầy dữ liệu khuyết( nếu lựa chọn Strategy <em>constant</em>)</li>
+</ul>
+</li>
+</ul>
+<p>Sau khi đã cài đặt xong, click <strong>Run</strong> để chạy.</p>
+<p>Với bộ dữ liệu bị khuyết ở nhiều cột khác nhau, người dùng có thể tạo các Stage Simple Imputer nối tiếp với nhau để xử lý từng kiểu dữ liệu bị khuyết, hoặc lựa chọn chung kiểu xử lý. Ở bộ dữ liệu này , cột dữ liệu <em>Sex</em> cũng bị khuyết , vì thế ta cũng tạo mới Stage Simple Imputer, lựa chọn cột <em>Sex</em> và cài đặt các thuộc tính khác.</p>
+<h3 id="xay-dung-flow-cho-bai-toan-su-dung-phan-lop-classification-for-titanic">Xây dựng Flow cho bài toán sử dụng Phân lớp - Classification for Titanic</h3>
+<ol>
+<li>
+<p>Tabular Input:
+ Sau khi người dùng đã tạo xong Flow Classification như các hướng dẫn ở trên,vào Flow click chọn Stage Tabular Input và đưa vào Dataflow Editor, tùy chọn thuộc tính và chỉnh sửa:</p>
+</li>
+<li>
+<p>Dataset : lựa chọn tập dữ liệu Titanic</p>
+</li>
+<li>Selected Comun : lựa lựa chọn các cột sẽ sử dụng trong quá trình xử lý dữ liệu. Ở đây chúng tôi lựa chọn các cột : PClass, Sex, Age, SibSp, Parch. người dùng có thể lựa chọn tất cả các cột dữ liệu để phân tích.</li>
+<li>
+<p>Click lại vào Stage và click <strong>Run</strong></p>
+</li>
+<li>
+<p>Xử lý handle mising data:</p>
+</li>
+<li>
+<p>Encode dữ liệu dạng <em>string</em>:</p>
+<p>Phần dữ liệu sử dụng để train có cột <em>Sex</em> chứa 2 giá trị : Male và Female , để dùng trong học máy để train , ta cần encode chúng.
+Chọn Stage <em>One Hot Encoder Transformer</em> trong mục <em>Transformer</em> của <em>Scikitsama.ml</em> đưa vào Dataflow Editor. Tạo kết nối với các Stage đã tạo, cài đặt thuộc tính của Stage lựa chọn cột dữ liệu encode. Sau khi cài đặt thuộc tính , cick lại vào Stage và click <strong>Run</strong></p>
+<p><img alt="Hình 9." src="https://i.imgur.com/X81l3i5.png" /></p>
+<p>Ngoài <em>One Hot Encoder Transformer</em> ta cũng có thể sử dụng các Stage Transformer khác trong mục Transformer của <em>Scikitsama.ml</em> như <em>Ordinal Encoder Transformer</em> để encode.</p>
+</li>
+<li>
+<p>Normalization dữ liệu:</p>
+<p>Trong các bài toán của chúng ta, có một số dữ liệu khác nhau nhiều về tỉ lệ. Vì vậy để giảm gánh nặng cho mô hình học máy , ta cần chuẩn hóa tỉ lệ một số dữ liệu. Ở bài này , ta chuẩn hóa dữ liệu về tuổi tác hành khách.
+Stage <em>Normalize Transformer</em> dùng để bình thường hóa dữ liệu.
+Chọn <em>Normalize Transformer</em> trong mục Transformer của <em>Scikitsama.ml</em> , tạo kết nối với stage cuối của flow đã train (One Hot Encoder Transformer. Lựa chọn cột dữ liệu Age Sau khi cài đặt thuộc tính , click lại vào Stage và click <strong>Run</strong></p>
+<p><img alt="Hình 10" src="https://i.imgur.com/JDpS3el.png" /></p>
+</li>
+<li>
+<p>Lựa chọn thuật toán Classification:</p>
+<p>DSSAMA Platform cung cấp các Stage Classification ở hình 11, người dùng có thể lựa chọn một trong các Stage đó để hoàn thành một mô hình học máy với các phần tiền xử lý dữ liệu đã thực hiện ở các phần trên. </p>
+<p><img alt="Hình 11" src="https://i.imgur.com/pLf1L4F.png" /></p>
+<p>Mỗi Stage được các thuộc tính được cài đặt với parameter mặc định để xử lý các bài toán điển hình, người dùng có thể thay đổi theo mục đích từng bài toán người dùng xử lý.</p>
+<p>Chúng ta xây dựng được Flow như hình 11 dưới đây.
+    <img alt="Hình 12." src="https://i.imgur.com/rDcpkW6.png" /></p>
+<p>Kết quả hiển thị của Flow với lựa chọn Classification là <em>Random Forest Classifier</em>
+    <img alt="Hình 13. " src="https://i.imgur.com/rG66TOX.png" /></p>
+<p><img alt="Hình 14. " src="https://i.imgur.com/5prNFBM.png" /></p>
+<p><img alt="Hình 15. " src="https://i.imgur.com/GkBDX6Y.png" /></p>
+</li>
+</ol>
+<p>Một số Flow học máy được xây dựng trong DSSAMA </p>
+<p><img alt="Hình 16. Một số Flow Classification for Titanic " src="https://i.imgur.com/GxJe6Mk.png" />
+            <em>Hình 16. Một số Flow Classification for Titanic</em></p>
+<h3 id="xay-dung-flow-cho-bai-toan-su-dung-hoi-quy-regression-for-titanic">Xây dựng Flow cho bài toán sử dụng Hồi quy - Regression for Titanic</h3>
+<h3 id="xay-dung-flow-cho-bai-toan-phan-cum">Xây dựng Flow cho bài toán phân cụm</h3></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
