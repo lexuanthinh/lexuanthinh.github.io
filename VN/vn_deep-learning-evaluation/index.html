@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Vn deep learning evaluation - DSSAMA Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DSSAMA Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EN/en_getting_started.md" class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_index/" class="dropdown-item">Index</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_flow" class="dropdown-item">Flow</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_deep_learning_evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_machine_learning_pipeline.md" class="dropdown-item">Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_deploy/" class="dropdown-item">Deploy</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vietnamese <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../vn_getting_started" class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../vn_introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../vn_getting_started.md" class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../vn_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../vn_workspace.md" class="dropdown-item">Workspace</a>
+</li>
+                                    
+<li>
+    <a href="../vn_flow/" class="dropdown-item">Flow</a>
+</li>
+                                    
+<li>
+    <a href="../vn_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="../vn_machine_learning_pipeline/" class="dropdown-item">MachineLearningPipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_deep_learning_evaluation.md" class="dropdown-item">Deep Learning Evaluation</a>
+</li>
+                                    
+<li>
+    <a href="../vn_deploy/" class="dropdown-item">Deploy</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#1-image-classification-neural-network" class="nav-link">1.   Image Classification Neural Network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#2-densenet" class="nav-link">2.   DenseNet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#3-mobilenet" class="nav-link">3.   MobileNet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#6-tabulardata-classification-neural-network" class="nav-link">6.   TabularData Classification Neural Network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#7-timeseries-forecasting-neural-network" class="nav-link">7.   TimeSeries Forecasting Neural Network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="1-image-classification-neural-network">1.   Image Classification Neural Network</h2>
+<h3 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h3>
+<ul>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
+<img alt="" src="https://i.imgur.com/8GQbgzS.png" /></li>
+<li>Ấn <strong>RUN</strong> để xem dữ liệu đầu vào:  </li>
+</ul>
+<h3 id="buoc-2-trong-package-tfsama-chon-image">Bước 2: Trong package tfsama  chọn Image</h3>
+<p>Classification Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</p>
+<p>Trong Image Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
+<img alt="" src="https://i.imgur.com/8yYdLj1.png" />
+- Layer: dùng để cấu hình Network bằng file Json bằng cách click chuột vào <img alt="" src="https://i.imgur.com/ptj8wFq.png" />
+Ở dây với tập dataset có 3 lớp gồm 1500 ảnh màu (RGB) ta sẽ cấu hình như sau:
+<img alt="" src="https://i.imgur.com/z9LYtN3.png" />
+Còn các tham số khác để mặc định</p>
+<h3 id="buoc-3-noi-image-input-for-classification-vao-stage-image-classification-neural-network">Bước 3: Nối Image Input for Classification vào stage Image Classification Neural Network</h3>
+<p><img alt="" src="https://i.imgur.com/n6ZTB5U.png" /></p>
+<h3 id="buoc-4-an-run-e-hien-thi-ra-ket-qua">Bước 4: Ấn Run để hiển thị ra kết quả</h3>
+<h2 id="2-densenet">2.   DenseNet</h2>
+<h3 id="21-mo-ta-thuat-toan">2.1.    Mô tả thuật toán</h3>
+<p>Chi tiết xem tại: https://arxiv.org/pdf/1608.06993.pdf</p>
+<h3 id="22-cac-buoc-thuc-hien">2.2.    Các bước thực hiện</h3>
+<h4 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter_1">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h4>
+<ul>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
+<img alt="" src="https://i.imgur.com/yjVt51K.png" /></li>
+<li>Ấn RUN để xem dữ liệu đầu vào:  </li>
+</ul>
+<h4 id="buoc-2-chon-desennet">Bước 2: Chọn DesenNet</h4>
+<p>Trong package tfsama  chọn DenseNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong DenseNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
+<img alt="" src="https://i.imgur.com/0kk5krG.png" />
+- Architecture: Chọn kiến trúc mạng DenseNet phù hợp.
+- Input_shape: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình đầu vào cho kiến trúc DenseNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:
+<img alt="" src="https://i.imgur.com/l6S5uah.png" />
+- Top Layers: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.
+<img alt="" src="https://i.imgur.com/3UrL1iZ.png" />
+- Các tham số còn lại để mặc định hoặc tuỳ người dùng config</p>
+<h4 id="buoc-3-noi-image-input-for-classification-vao-stage-densenet">Bước 3: Nối <strong>Image Input for Classification</strong> vào stage <strong>DenseNet</strong></h4>
+<p><img alt="" src="https://i.imgur.com/nW4ya9W.png" /></p>
+<h4 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_1">Bước 4: Ấn Run để hiển thị ra kết quả</h4>
+<h2 id="3-mobilenet">3.   MobileNet</h2>
+<h3 id="31-mo-ta-thuat-toan">3.1.    Mô tả thuật toán</h3>
+<p>Chi tiết xe tại: https://arxiv.org/pdf/1704.04861.pdf</p>
+<h3 id="32-cac-buoc-thuc-hien">3.2.    Các bước thực hiện</h3>
+<h4 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter_2">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h4>
+<ul>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
+<img alt="" src="https://i.imgur.com/yjVt51K.png" /></li>
+<li>Ấn RUN để xem dữ liệu đầu vào: </li>
+</ul>
+<h4 id="buoc-2-chon-mobilenet">Bước 2: Chọn MobileNet</h4>
+<p>Trong package tfsama  chọn MobileNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong MobileNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
+<img alt="" src="https://i.imgur.com/7TKLssm.png" />
+- Architecture: Chọn kiến trúc mạng MobileNet phù hợp.
+- Input_shape: Click vào CONFIGURATION dùng để cấu hình đầu vào cho kiến trúc MobileNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:
+<img alt="" src="https://i.imgur.com/tpXgGWj.png" />
+- Top Layers: Click vào CONFIGURATION dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.
+<img alt="" src="https://i.imgur.com/7vGKEH5.png" />
+•   Các tham số còn lại để mặc định hoặc tuỳ người dùng config</p>
+<h4 id="buoc-3-noi-image-input-for-classification-vao-stage-mobilenet">Bước 3: Nối Image Input for Classification vào stage MobileNet</h4>
+<p><img alt="" src="https://i.imgur.com/s3B8hZ8.png" /></p>
+<h4 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_2">Bước 4: Ấn Run để hiển thị ra kết quả</h4>
+<h2 id="6-tabulardata-classification-neural-network">6.   TabularData Classification Neural Network</h2>
+<h3 id="buoc-1-chon-stage-input">Bước 1: Chọn stage input</h3>
+<ul>
+<li>Chọn Tabular Input trong Input.Phần parameter:</li>
+<li>Dataset: Ở đây dùng tập Iris dataset (Link dataset: https://www.kaggle.com/arshid/iris-flower-dataset). Tập dataset này được xử lý gồm 6 cột. Cột thứ nhất là index, cột thứ 2,3,4, 5 là các đặc trăng của hoa gồm: Petal Length, Petal Width, Sepal Length, Sepal width. Cột thứ 6 là label gồm 3 lớp tương ứng với 3 loại hoa Iris.</li>
+<li>Selected column: Petal Length, Petal Width, Sepal Length, Sepal width
+<img alt="" src="https://i.imgur.com/2MG38Rl.png" /></li>
+<li>Ấn RUN để xem dữ liệu đầu vào:  </li>
+</ul>
+<h3 id="buoc-2-chon-tabulardata-classification-neural-network">Bước 2: Chọn <strong>TabularData Classification Neural Network</strong></h3>
+<p>Trong package tfsama chọn TabularData Classification Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong TabularData Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
+<img alt="" src="https://i.imgur.com/ZZMWf04.png" /></p>
+<ul>
+<li>Layer: dùng để cấu hình Network bằng file Json bằng cách click chuột vào <img alt="" src="https://i.imgur.com/ptj8wFq.png" /></li>
+</ul>
+<p>Ở đây thấy tập dataset có 4 features do đó input_shape: 4 còn các tham số còn lại để mặc định.
+<img alt="" src="https://i.imgur.com/FD5yZpX.png" /></p>
+<ul>
+<li>Các tham số còn lại người dùng tuỳ chỉnh để phù hợp bài toán.</li>
+</ul>
+<h3 id="buoc-3-noi-tabular-input-vao-stage-tabulardata-classification-neural-network">Bước 3: Nối Tabular Input vào stage TabularData Classification Neural Network</h3>
+<p><img alt="" src="https://i.imgur.com/pejzWPW.png" /></p>
+<h3 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_3">Bước 4: Ấn Run để hiển thị ra kết quả</h3>
+<h2 id="7-timeseries-forecasting-neural-network">7.   TimeSeries Forecasting Neural Network</h2>
+<h3 id="buoc-1-chon-stage-input_1">Bước 1: Chọn stage Input</h3>
+<ul>
+<li>Chọn Timeseries Input trong Input.Phần parameter:
+•   Dataset: Ở đây dùng tập Google Stock dataset (Link dataset: https://www.kaggle.com/medharawat/google-stock-price). Tập dataset này gồm 6 cột: Date, Open, High, Low, Close, Volume
+•   Time steps column: Date
+•   Selected column: Open, High, Low, Close, Volume
+<img alt="" src="https://i.imgur.com/mzkgRE9.png" />
+Ấn RUN để xem dữ liệu đầu vào:  </li>
+</ul>
+<h3 id="buoc-2-chon-vectorize-trasform">Bước 2: Chọn <strong>Vectorize Trasform</strong></h3>
+<ul>
+<li>Trong package scikitsama chọn Vectorize Trasform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong Vectorize Trasform có parameter Vectorize Column để chọn các cột cần vector hoá.Ở đây ta chọn: Open, High, Low, Close</li>
+</ul>
+<h3 id="buoc-3-noi-timeseries-input-vao-stage-vectorize-trasform">Bước 3: Nối Timeseries Input vào stage Vectorize Trasform.</h3>
+<p><img alt="" src="https://i.imgur.com/nYcRq7N.png" /></p>
+<h3 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_4">Bước 4: Ấn Run để hiển thị ra kết quả</h3>
+<h3 id="buoc-5-chon-timeseries-forecasting-neural-network">Bước 5: Chọn TimeSeries Forecasting Neural Network</h3>
+<p>Trong package tfsama chọn TimeSeries Forecasting Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong TimeSeries Forecasting Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:</p>
+<ul>
+<li><em>Features Column</em>: Chính là các cột vừa được Vectorize trong stage Vectorize Trasform</li>
+<li><em>Target Column</em>: Chính là các cột vừa được Vectorize trong stage Vectorize Trasform</li>
+<li><em>Layer</em>: dùng để cấu hình Network bằng file Json bằng cách click chuột vào 
+<img alt="" src="https://i.imgur.com/ptj8wFq.png" /></li>
+</ul>
+<p>Ở đây thấy trong Vectorize Trasform ta có 4 feature: Open, High, Low, Close. Đồng thời chọn Window size = 10 còn các tham số khác để mặc định nên ta có config như sau:
+https://i.imgur.com/6QEGdTR.png
+- <em>Window size</em>: tham số này cũng phải đặt tương ứng với Window size trong file config là: 10</p>
+<h3 id="buoc-6-noi-vectorize-trasform-vao-stage-timeseries-forecasting-neural-network">Bước 6: Nối <strong>Vectorize Trasform</strong> vào stage <strong>TimeSeries Forecasting Neural Network</strong>.</h3>
+<p><strong>TimeSeries Forecasting Neural Network</strong> sẽ dùng các cột được Vectorize để dự đoán ra các cột Target Column
+<img alt="" src="https://i.imgur.com/QKt6xi3.png" /></p>
+<h3 id="buoc-7-an-run-e-hien-thi-ra-ket-qua">Bước 7: Ấn Run để hiển thị ra kết quả</h3></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
