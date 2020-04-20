@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>MachineLearningPipeline - DSSAMA Docs</title>
+        <title>NLTK Machine Learning Pipeline - DSSAMA Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,15 +38,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../EN/en_getting_started.md" class="dropdown-item">Home</a>
-</li>
-                                    
-<li>
-    <a href="../../EN/en_index/" class="dropdown-item">Index</a>
+    <a href="../../EN/en_getting_started/" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
     <a href="../../EN/en_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_workspace/" class="dropdown-item">Workspace</a>
 </li>
                                     
 <li>
@@ -58,7 +58,19 @@
 </li>
                                     
 <li>
-    <a href="../../EN/en_machine-learning-pipeline/" class="dropdown-item">Machine Learning Pipeline</a>
+    <a href="../../EN/en_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_simpleflow/" class="dropdown-item">Simple Flow</a>
 </li>
                                     
 <li>
@@ -71,7 +83,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../vn_getting-started" class="dropdown-item">Home</a>
+    <a href="../vn_getting_started" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
@@ -95,11 +107,23 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">MachineLearningPipeline</a>
+    <a href="../vn_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
 </li>
                                     
 <li>
-    <a href="../vn_deep-learning-evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
+    <a href="./" class="dropdown-item active">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../vn_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="../vn_deep_learning_evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
 </li>
                                     
 <li>
@@ -116,12 +140,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../vn_simpleflow/" class="nav-link">
+                                <a rel="prev" href="../vn_machine_learning_pipeline_scikitsama/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../vn_deep-learning-evaluation/" class="nav-link">
+                                <a rel="next" href="../vn_pyvisama/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -143,13 +167,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#machine-learning-pipeline" class="nav-link">MACHINE LEARNING PIPELINE</a>
+            <li class="nav-item" data-level="1"><a href="#machine-learning-pipeline-with-nltksama" class="nav-link">MACHINE LEARNING PIPELINE WITH NLTKSAMA</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#scikitsama" class="nav-link">Scikitsama</a>
+            <li class="nav-item" data-level="2"><a href="#1-word-stemming-transformer" class="nav-link">1.   Word Stemming Transformer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#nltksama" class="nav-link">NLTKsama</a>
+            <li class="nav-item" data-level="2"><a href="#2-mwe-tokenization-transformer" class="nav-link">2.   Mwe Tokenization Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-tweet-tokenization-transformer" class="nav-link">3.   Tweet Tokenization Transformer</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -160,119 +188,38 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="machine-learning-pipeline">MACHINE LEARNING PIPELINE</h1>
-<h2 id="scikitsama">Scikitsama</h2>
-<p>Mục đích của hướng dẫn này là để minh họa một số tính năng chính scikit.sama cung cấp. </p>
-<h3 id="1-data-import-and-manipulation"><strong>1. Data Import and manipulation</strong></h3>
-<p>Từ các tập dataset đã đưa vào Data source, để sử dụng dataset đó trong Flow, người dùng cần import dữ liệu.
-Để import dữ liệu, người dùng sử dụng các stage Input lựa chọn từ nhóm stage Input. Với mỗi dạng data source sẽ có Stage import dữ liệu riêng , có các stage Input như sau:</p>
-<p><img alt="" src="https://i.imgur.com/JABhURb.png" /></p>
-<ul>
-<li>
-<p><code>Tabular Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng bảng.</p>
-</li>
-<li>
-<p><code>Text Input</code> : Stage input tương dữ liệu nguồn sử dụng là dạng text.</p>
-</li>
-<li><code>Timeseries Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng chuỗi thời gian.</li>
-<li><code>Image Input</code> : Stage input cho nguồn dữ liệu sử dụng là dạng ảnh.</li>
-<li><code>Image Input for Classification</code> : </li>
-<li><code>Image Input for Segmentation</code>:</li>
-<li><code>Maps Input</code> : Input dữ liệu thể hiện trên bản đồ.</li>
-<li><code>Scikit Iput</code> : Input dữ liệu dùng cho thư viện  scikit learn, có sẵn một số dataset kinh điển. Không cần phải tạo data source.</li>
-</ul>
-<p><strong>Các thao tác</strong></p>
-<p>Để import data vào grid flow editor: 
-1. Click lựa chọn stage Input phù hợp với data source đã tạo và muốn sử dụng( ví dụ đã tạo datasource tabular để sử dụng ta cần chọn Tabular Input )
-1. Click lại vào vùng grid để đưa stage Input đó vào
-1. Tùy chọn thuộc tính của stage ở menu phải stage properties
-1. Click <code>Run</code> để visualize data đưa vào và quan sát dữ liệu. </p>
-<h3 id="data-preprocessing"><strong>Data Preprocessing</strong></h3>
-<h3 id="supervised-modeling"><strong>Supervised Modeling</strong></h3>
-<h4 id="1-classification">1. Classification</h4>
-<p>Sử dụng các thuật toán <em>Supervised Learning</em> để phân lớp. Trong phần này sẽ sử dụng trực tiếp tập dữ liệu Iris trong phần Input của <strong>Scikit.sama</strong> để phân lớp. Đây là bộ dataset đã được tiền xử lý gồm 4 features: sepal length (cm), sepal width (cm), petal length (cm) và petal width (cm). Target của bộ dữ liệu là từ 4 features có thể dự đoán được nó thuộc loại hoa Iris nào trong 3 loại hoa đã được encode.
-<img alt="" src="https://i.imgur.com/dxKBdaZ.png" />
--   Chọn biếu tượng <img alt="" src="https://i.imgur.com/lEcJJmZ.png" /> để chia dữ liệu thành tập train và test.
-Mặc định là 0.7 cho train và 0.3 cho test:
-<img alt="" src="https://i.imgur.com/PAy2e9d.png" />
-- Ấn <strong>Run</strong> để xem dữ liệu
-<img alt="" src="https://i.imgur.com/AdPcjln.png" /></p>
-<h5 id="11-decision-tree-classifier">1.1.  Decision Tree Classifier</h5>
-<h6 id="111-mo-ta-thuat-toan">1.1.1.   Mô tả thuật toán</h6>
-<p><a href="https://scikit-learn.org/stable/modules/tree.html#tree">Thuật toán Decision Tree Classifier</a></p>
-<h6 id="112-cac-buoc-thuc-hien">1.1.2.   Các bước thực hiện</h6>
-<ul>
-<li>Bước 1: Trong package scikitsama.ml phần classification chọn Decision Tree Classifier bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
-<img alt="" src="https://i.imgur.com/JnqAEIP.png" /></li>
-<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Iris) vào stage Decision Tree Classifier.
-Trong Decision Tree Classifier có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html
-<img alt="" src="https://i.imgur.com/g7gpwNB.png" /></li>
-<li>Bước 3: Ấn Run để hiển thị ra kết quả
-<img alt="" src="https://i.imgur.com/CW9ZfRS.png" /></li>
-<li>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả
-<img alt="" src="https://i.imgur.com/n0AfmMj.png" />
-<img alt="" src="https://i.imgur.com/LueOX8C.png" /></li>
-<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới
-<img alt="" src="https://i.imgur.com/9KI8kve.png" /></li>
-</ul>
-<h3 id="unsupervised-modeling"><strong>Unsupervised Modeling</strong></h3>
-<h3 id="evaluation"><strong>Evaluation</strong></h3>
-<h2 id="nltksama">NLTKsama</h2>
-<h3 id="nltk">NLTK</h3>
-<h4 id="1-word-stemming-transformer">1. Word Stemming Transformer</h4>
+<h1 id="machine-learning-pipeline-with-nltksama">MACHINE LEARNING PIPELINE WITH NLTKSAMA</h1>
+<h2 id="1-word-stemming-transformer">1.   Word Stemming Transformer</h2>
 <ul>
 <li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
 <li><strong>Dataset</strong>: Ở đây dùng tập <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
 <li><strong>Selected column</strong>: Content</li>
 <li><strong>Start record</strong>: 0</li>
 <li><strong>End record</strong>: 9
-Ấn RUN để xem dữ liệu đầu vào:
-<img alt="" src="https://i.imgur.com/VwGXzrU.png" /></li>
+Ấn RUN để xem dữ liệu đầu vào:</li>
 </ul>
 </li>
-<li>Bước 2: Trong package nltksama.ml phần transform chọn Word Stemming Transformer  bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
-<img alt="" src="https://i.imgur.com/yZO6iuO.png" /></li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+<ul>
+<li>Bước 2: Trong package nltksama.ml phần transform chọn Word Stemming Transformer  bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yZO6iuO.png" /></p>
+<ul>
 <li>
 <p>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage Word Stemming Transformer.
 Trong Word Stemming Transformer có các tham số để lựa chọn tuỳ thuộc vào từng bài toán:</p>
 <ul>
 <li><strong>language</strong> (str) – Chọn ngôn ngữ cần thực hiện bao gồm: <em>'arabic', 'danish', 'dutch', 'english', 'finnish', 'french', 'german', 'hungarian', 'italian', 'norwegian', 'porter', 'portuguese', 'romanian', 'russian', 'spanish', 'swedish'</em>.</li>
-<li><strong>ignore_stopwords</strong> (bool) – Nếu được đặt thành True, stopwords không được stemmed and và được trả lại không thay đổi. Đặt False là mặc định.
-<img alt="" src="https://i.imgur.com/0wIwb4H.png" /></li>
+<li><strong>ignore_stopwords</strong> (bool) – Nếu được đặt thành True, stopwords không được stemmed and và được trả lại không thay đổi. Đặt False là mặc định.</li>
 </ul>
+<p><img alt="" src="https://i.imgur.com/0wIwb4H.png" /></p>
 </li>
 <li>
 <p>Bước 4: Ấn Run để hiển thị ra kết quả</p>
 </li>
 </ul>
-<h4 id="2-mwe-tokenization-transformer">2. Mwe Tokenization Transformer</h4>
-<ul>
-<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
-<li><strong>Dataset</strong>: Ở đây dùng tập <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
-<li><strong>Selected column</strong>: Content</li>
-<li><strong>Start record</strong>: 0</li>
-<li><strong>End record</strong>: 9
-Ấn RUN để xem dữ liệu đầu vào:
-<img alt="" src="https://i.imgur.com/VwGXzrU.png" /></li>
-</ul>
-</li>
-<li>
-<p>Bước 2: Trong package <strong>nltksama.ml</strong> phần <strong>transform</strong> chọn chọn <strong>Mwe Tokenization Transformer</strong> bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
-<img alt="" src="https://i.imgur.com/SKJ8g6G.png" /></p>
-</li>
-<li>
-<p>Bước 3: Nối <strong>Text Input</strong>(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage <strong>Mwe Tokenization Transformer</strong>.
-Trong <strong>Mwe Tokenization Transformer</strong> có các tham số để lựa chọn tuỳ thuộc vào từng bài toán:</p>
-<ul>
-<li><strong>mwe</strong> (tuple(str) or list(str)): Danh sách các cụm từ cần phân tách</li>
-<li><strong>separator</strong>:ký tự nối các từ trong cụm từ. Mặc định là ‘-’
-<img alt="" src="https://i.imgur.com/yvLwtub.png" /></li>
-</ul>
-</li>
-<li>Bước 4: Ấn Run để hiển thị ra kết quả
-<img alt="" src="https://i.imgur.com/E5EXq2o.png" /></li>
-</ul>
-<h4 id="3-tweet-tokenization-transformer">3. Tweet Tokenization Transformer</h4>
+<h2 id="2-mwe-tokenization-transformer">2.   Mwe Tokenization Transformer</h2>
 <ul>
 <li>
 <p>Bước 1: Chọn Text Input trong Input.Phần parameter:</p>
@@ -281,22 +228,53 @@ Trong <strong>Mwe Tokenization Transformer</strong> có các tham số để l�
 <li><strong>Selected column</strong>: Content</li>
 <li><strong>Start record</strong>: 0</li>
 <li><strong>End record</strong>: 9
-Ấn RUN để xem dữ liệu đầu vào:
-<img alt="" src="https://i.imgur.com/VwGXzrU.png" /></li>
+Ấn RUN để xem dữ liệu đầu vào:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package <strong>nltksama.ml</strong> phần <strong>transform</strong> chọn <strong>Mwe Tokenization Transformer</strong> bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/SKJ8g6G.png" /></p>
+<ul>
+<li>Bước 3: Nối <strong>Text Input</strong>(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage <strong>Mwe Tokenization Transformer</strong>.
+Trong <strong>Mwe Tokenization Transformer</strong> có các tham số để lựa chọn tuỳ thuộc vào từng bài toán:<ul>
+<li><strong>mwe</strong> (tuple(str) or list(str)): Danh sách các cụm từ cần phân tách</li>
+<li><strong>separator</strong>:ký tự nối các từ trong cụm từ. Mặc định là ‘-’</li>
 </ul>
 </li>
-<li>
-<p>Bước 2: Trong package nltksama.ml phần transform chọn Tweet Tokenization Transformer  bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
-<img alt="" src="https://i.imgur.com/pWpJnqy.png" /></p>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yvLwtub.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/E5EXq2o.png" /></p>
+<h2 id="3-tweet-tokenization-transformer">3.   Tweet Tokenization Transformer</h2>
+<ul>
+<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
+<li><strong>Dataset</strong>: Ở đây dùng tập <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li><strong>Selected column</strong>: Content</li>
+<li><strong>Start record</strong>: 0</li>
+<li><strong>End record</strong>: 9</li>
+</ul>
 </li>
-<li>
-<p>Bước 3: Nối <strong>Text Input</strong>(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage <strong>Tweet Tokenization Transformer</strong>.
-Trong <strong>Tweet Tokenization Transformer</strong> có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://www.nltk.org/api/nltk.tokenize.html?highlight=tweettokenizer#nltk.tokenize.casual.TweetTokenizer
-<img alt="" src="https://i.imgur.com/2M0Zbxu.png" /></p>
-</li>
-<li>Bước 4: Ấn Run để hiển thị ra kết quả:
-<img alt="" src="https://i.imgur.com/rzYk9Gb.png" /></li>
-</ul></div>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+<ul>
+<li>Bước 2: Trong package <strong>nltksama.ml</strong> phần <strong>transform</strong> chọn stage <strong>Tweet Tokenization Transformer</strong> đưa vào màn hình làm việc. </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/pWpJnqy.png" /></p>
+<ul>
+<li>Bước 3: Nối <strong>Text Input</strong>(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage <strong>Tweet Tokenization Transformer</strong>.
+Trong <strong>Tweet Tokenization Transformer</strong> có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://www.nltk.org/api/nltk.tokenize.html?highlight=tweettokenizer#nltk.tokenize.casual.TweetTokenizer</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/2M0Zbxu.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/rzYk9Gb.png" /></p></div>
             </div>
         </div>
 

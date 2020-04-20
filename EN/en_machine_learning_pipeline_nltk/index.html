@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Flow - DSSAMA Docs</title>
+        <title>NLTK Machine Learning Pipeline - DSSAMA Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -50,7 +50,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Flow</a>
+    <a href="../en_flow/" class="dropdown-item">Flow</a>
 </li>
                                     
 <li>
@@ -62,7 +62,7 @@
 </li>
                                     
 <li>
-    <a href="../en_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+    <a href="./" class="dropdown-item active">NLTK Machine Learning Pipeline</a>
 </li>
                                     
 <li>
@@ -140,12 +140,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../en_workspace/" class="nav-link">
+                                <a rel="prev" href="../en_machine_learning_pipeline_scikitsama/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../en_deep_learning_evaluation/" class="nav-link">
+                                <a rel="next" href="../en_pyvisama/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -166,12 +166,111 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#machine-learning-pipeline-with-nltksama" class="nav-link">MACHINE LEARNING PIPELINE WITH NLTKSAMA</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1-word-stemming-transformer" class="nav-link">1. Word Stemming Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-mwe-tokenization-transformer" class="nav-link">2. Mwe Tokenization Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-tweet-tokenization-transformer" class="nav-link">3. Tweet Tokenization Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="machine-learning-pipeline-with-nltksama">MACHINE LEARNING PIPELINE WITH NLTKSAMA</h1>
+<h2 id="1-word-stemming-transformer">1. Word Stemming Transformer</h2>
+<ul>
+<li>
+<p>Step 1: Select Text Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: here we use <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li>Selected column: Content</li>
+<li>Start record: 0</li>
+<li>End record: 9 </li>
+<li>Click RUN to view input data </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+</li>
+<li>
+<p>Step 2: In package nltksama.ml/transform select Word Stemming Transformer.  </p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yZO6iuO.png" /></p>
+<ul>
+<li>
+<p>Step 3: Connect Text Input with stage Word Stemming Transformer. The parameters are as follows:</p>
+<ul>
+<li><strong>language (str)</strong> – Select the language of data: 'arabic', 'danish', 'dutch', 'english', 'finnish', 'french', 'german', 'hungarian', 'italian', 'norwegian', 'porter', 'portuguese', 'romanian', 'russian', 'spanish', 'swedish'.</li>
+<li><strong>ignore_stopwords (bool)</strong> – If True, ignore stopwords. Default is False. định. </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/0wIwb4H.png" /></p>
+</li>
+<li>
+<p>Step 4: Click Run</p>
+</li>
+</ul>
+<h2 id="2-mwe-tokenization-transformer">2. Mwe Tokenization Transformer</h2>
+<ul>
+<li>
+<p>Step 1: Select Text Input in the Input list.</p>
+<ul>
+<li>Dataset: BBC News<a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li>Selected column: Content</li>
+<li>Start record: 0</li>
+<li>End record: 9 </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+</li>
+<li>
+<p>Step 2: package <strong>nltksama.ml/transform</strong> select <strong>Mwe Tokenization Transformer</strong>.  </p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/SKJ8g6G.png" /></p>
+<ul>
+<li>
+<p>Step 3: Nối <strong>Text Input</strong>(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage <strong>Mwe Tokenization Transformer</strong>. The parameters are as follows:</p>
+<ul>
+<li><strong>mwe (tuple(str)</strong> or <strong>list(str))</strong>: List of phrases to tokenize</li>
+<li><strong>separator</strong>: phrase connector. Default is “-“.
+<img alt="" src="https://i.imgur.com/yvLwtub.png" /></li>
+</ul>
+</li>
+<li>
+<p>Step 4: Click Run</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/E5EXq2o.png" /></p>
+<h2 id="3-tweet-tokenization-transformer">3. Tweet Tokenization Transformer</h2>
+<ul>
+<li>
+<p>Step 1: Select Text Input in the Input list.</p>
+<ul>
+<li>Dataset: Ở đây dùng tập BBC_News<a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li>elected column: Content</li>
+<li>Start record: 0</li>
+<li>End record: 9 
+Click RUN to view data:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VwGXzrU.png" /></p>
+</li>
+</ul>
+<p>•   Step 2: In the package nltksama.ml/transform select Tweet Tokenization Transformer.</p>
+<p><img alt="" src="https://i.imgur.com/pWpJnqy.png" /></p>
+<p>•   Step 3: Connect Text Input with Tweet Tokenization Transformer stage. For information on the parameters, visit: https://www.nltk.org/api/nltk.tokenize.html?highlight=tweettokenizer#nltk.tokenize.casual.TweetTokenizer  </p>
+<p><img alt="" src="https://i.imgur.com/2M0Zbxu.png" /></p>
+<p>•   Step 4: Click Run:</p>
+<p><img alt="" src="https://i.imgur.com/rzYk9Gb.png" /></p></div>
             </div>
         </div>
 

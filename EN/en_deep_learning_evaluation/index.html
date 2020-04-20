@@ -38,15 +38,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../en_getting_started.md" class="dropdown-item">Home</a>
-</li>
-                                    
-<li>
-    <a href="../en_index/" class="dropdown-item">Index</a>
+    <a href="../en_getting_started/" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
     <a href="../en_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../en_workspace/" class="dropdown-item">Workspace</a>
 </li>
                                     
 <li>
@@ -58,7 +58,19 @@
 </li>
                                     
 <li>
-    <a href="../en_machine-learning-pipeline/" class="dropdown-item">Machine Learning Pipeline</a>
+    <a href="../en_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../en_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../en_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../en_simpleflow/" class="dropdown-item">Simple Flow</a>
 </li>
                                     
 <li>
@@ -71,7 +83,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../VN/vn_getting-started" class="dropdown-item">Home</a>
+    <a href="../../VN/vn_getting_started" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
@@ -95,11 +107,23 @@
 </li>
                                     
 <li>
-    <a href="../../VN/vn_machine_learning_pipeline/" class="dropdown-item">MachineLearningPipeline</a>
+    <a href="../../VN/vn_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
 </li>
                                     
 <li>
-    <a href="../../VN/vn_deep-learning-evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
+    <a href="../../VN/vn_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../VN/vn_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../VN/vn_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="../../VN/vn_deep_learning_evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
 </li>
                                     
 <li>
@@ -121,7 +145,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../en_machine-learning-pipeline/" class="nav-link">
+                                <a rel="next" href="../en_machine_learning_pipeline_scikitsama/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -142,12 +166,162 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#1-image-classification-neural-network" class="nav-link">1. Image Classification Neural Network</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#2-densenet" class="nav-link">2. DenseNet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-mobilenet" class="nav-link">3. MobileNet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#6-tabulardata-classification-neural-network" class="nav-link">6. TabularData Classification Neural Network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#7-timeseries-forecasting-neural-network" class="nav-link">7. TimeSeries Forecasting Neural Network</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="1-image-classification-neural-network">1. Image Classification Neural Network</h1>
+<h3 id="step-1-select-image-input-for-classification-under-the-inputs-list">Step 1: Select Image Input for Classification under the “inputs” list.</h3>
+<ul>
+<li>Dataset: Here we will use the Cifar10 dataset (Link to dataset: https://www.kaggle.com/c/cifar-10/data). The original dataset contains 60000 images. Here, we will use only 15000 images of 3 classes: bird, cat và dog, each class with 5000 images for training and testing.  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/8GQbgzS.png" /></p>
+<ul>
+<li>Click RUN to view input data:</li>
+</ul>
+<h3 id="step-2-select-image-in-the-tfsama">Step 2: Select “Image” in the “tfsama”</h3>
+<p>Select Image Classification Neural Network, put it on the stage grid and choose the suitable parameters.</p>
+<p><img alt="" src="https://i.imgur.com/8yYdLj1.png" /></p>
+<ul>
+<li>Layer: where you configure your neural network. Click on the button <img alt="" src="https://i.imgur.com/ptj8wFq.png" />. Here, we will use RGB images as input of the network, so in the configuration, the input shape will be 32x32x3 (32 pixels in width and height and 3 color channel):</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/z9LYtN3.png" /></p>
+<p>We keep the other parameters the same</p>
+<h3 id="step-3-connect-image-input-for-classification-into-stage-image-classification-neural-network">Step 3: Connect Image Input for Classification into stage Image Classification Neural Network</h3>
+<p><img alt="" src="https://i.imgur.com/n6ZTB5U.png" /></p>
+<h3 id="step-4-click-run-to-execute-the-flow-and-display-result">Step 4: Click Run to execute the flow and display result.</h3>
+<h2 id="2-densenet">2. DenseNet</h2>
+<h3 id="21-algorithm-description">2.1. Algorithm description</h3>
+<p>See more at: https://arxiv.org/pdf/1608.06993.pdf</p>
+<h3 id="22-implementation-details">2.2. Implementation details</h3>
+<h4 id="step-1-selectchon-image-input-for-classification-trong-input">Step 1: SelectChọn Image Input for Classification trong Input:</h4>
+<ul>
+<li>Dataset: We will use the same Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data) as above.  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yjVt51K.png" /></p>
+<ul>
+<li>Click RUN to view input data:</li>
+</ul>
+<h4 id="step-2-select-densenet">Step 2: Select DenseNet</h4>
+<p>In “tfsama” package, select DenseNet stage. Then, select the suitable parameter:  </p>
+<p><img alt="" src="https://i.imgur.com/0kk5krG.png" /></p>
+<ul>
+<li>Architecture: Select the suitable variation of DenseNet.</li>
+<li>Input_shape: Click CONFIGURATION to choose the suitable input shape.In this case, the shape is (32x32x3).  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/l6S5uah.png" /></p>
+<ul>
+<li>Top Layers: Click CONFIGURATION to fine-tune the Fully Connected layer of the Network</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/3UrL1iZ.png" /></p>
+<h4 id="step-3-connect-image-input-for-classification-with-stage-densenet">Step 3: Connect Image Input for Classification with stage DenseNet</h4>
+<p><img alt="" src="https://i.imgur.com/nW4ya9W.png" /></p>
+<h4 id="buoc-4-click-run-to-execute-flow">Bước 4: Click “Run” to execute flow</h4>
+<h2 id="3-mobilenet">3. MobileNet</h2>
+<h3 id="31-algorithm-description">3.1. Algorithm description</h3>
+<p>See more at: https://arxiv.org/pdf/1704.04861.pdf</p>
+<h3 id="32-implementation-details">3.2. Implementation details</h3>
+<h4 id="step-1-select-image-input-for-classification-in-inputs-list">Step 1: Select Image Input for Classification in “inputs” list:</h4>
+<ul>
+<li>Dataset: We use the same Cifar10 dataset (Link to dataset: https://www.kaggle.com/c/cifar-10/data) as above.  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yjVt51K.png" /></p>
+<h4 id="step-2-select-mobilenet">Step 2: Select MobileNet</h4>
+<p>In “tfsama” package select MobileNet and move it to the stage grid  </p>
+<p><img alt="" src="https://i.imgur.com/7TKLssm.png" /></p>
+<ul>
+<li>Architecture: Select the suitable architecture variation of Mobile Net</li>
+<li>Input_shape: Click CONFIGURATION and change input shape to 32x32x3 as above:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/tpXgGWj.png" /></p>
+<ul>
+<li>Top Layers: Click CONFIGURATION to configure the last Fully Connected Layer, since we have 3 classes the number of units in the last layers will be 3. </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/7vGKEH5.png" /></p>
+<h4 id="step-3-connect-image-input-for-classification-with-mobilenet">Step 3: Connect Image Input for Classification with MobileNet</h4>
+<p><img alt="" src="https://i.imgur.com/s3B8hZ8.png" /></p>
+<h4 id="step-4-click-run-to-execute-flow-and-display-result">Step 4: Click Run to execute flow and display result</h4>
+<h2 id="6-tabulardata-classification-neural-network">6. TabularData Classification Neural Network</h2>
+<h4 id="step-1-chon-stage-input">Step 1: Chọn stage input</h4>
+<ul>
+<li>Select Tabular Input in “inputs” list.</li>
+<li>Dataset: We use the Iris dataset (Link to dataset: https://www.kaggle.com/arshid/iris-flower-dataset). This dataset consists of 6 columns: the first is index, the 2nd, 3rd, and 4th are data features including: Petal Length, Petal Width, Sepal Length, Sepal width. The 6th is data labels consisting of three iris species.</li>
+<li>Selected column: Petal Length, Petal Width, Sepal Length, Sepal Width  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/2MG38Rl.png" /></p>
+<ul>
+<li>Click RUN to view input to view input data.</li>
+</ul>
+<h4 id="step-2-select-tabular-data-classification-neural-network">Step 2: Select Tabular Data Classification Neural Network</h4>
+<p>In tfsama package, select TabularData Classification Neural Network and move it to the stage grid. </p>
+<p><img alt="" src="https://i.imgur.com/ZZMWf04.png" /></p>
+<ul>
+<li>Layer: Click on the CONFIGURATION button <img alt="" src="https://i.imgur.com/ptj8wFq.png" /> to finetune the parameters.<br />
+Here we have 4 features, so the input shape will be 4.  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/FD5yZpX.png" /></p>
+<ul>
+<li>Users can finetune other parameters to suit the problem.</li>
+</ul>
+<h4 id="step-3-connect-tabular-input-with-tabulardata-classification-neural-network-stage">Step 3: Connect Tabular Input with TabularData Classification Neural Network stage</h4>
+<p><img alt="" src="https://i.imgur.com/pejzWPW.png" /></p>
+<h4 id="step-4-click-run-to-display-result">Step 4: Click Run to display result</h4>
+<h2 id="7-timeseries-forecasting-neural-network">7. TimeSeries Forecasting Neural Network</h2>
+<h4 id="step-1-select-input-stage">Step 1: Select Input stage</h4>
+<ul>
+<li>
+<p>Select Timeseries Input in “input” lists. </p>
+<ul>
+<li>Dataset: We use the Google Stock dataset (Link to dataset: https://www.kaggle.com/medharawat/google-stock-price). This dataset này consists of 6 columns: Date, Open, High, Low, Close, Volume</li>
+<li>Time steps column: Date</li>
+<li>Selected column: Open, High, Low, Close, Volume  </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/mzkgRE9.png" /></p>
+</li>
+</ul>
+<h4 id="step-2-select-vectorize-transform">Step 2: Select Vectorize Transform</h4>
+<ul>
+<li>In package “scikitsama” select Vectorize Transform and move it to the stage grid. In Vectorize Trasform, we have parameter” Vectorize Column” to select the columns to be vectorize. Here we choose: Open, High, Low, Close</li>
+</ul>
+<h4 id="step-3-connect-timeseries-input-with-vectorize-transform-stage">Step 3: Connect Timeseries Input with Vectorize Transform stage.</h4>
+<p><img alt="" src="https://i.imgur.com/nYcRq7N.png" /></p>
+<h4 id="step-4-click-run-to-execute-flow-and-display-result_1">Step 4: Click Run to execute flow and display result</h4>
+<h4 id="step-5-select-timeseries-forecasting-neural-network">Step 5: Select TimeSeries Forecasting Neural Network</h4>
+<p>In package “tfsama”, select TimeSeries Forecasting Neural Network and move it to the stage grid. Afterwards, users need to finetune the parameters suitably:
+- Features Column: Columns that have been vectorized with Vectorize Transform
+- Target Column: Select Volumn
+- Layer: click on the CONFIGURATION button <img alt="" src="https://i.imgur.com/ptj8wFq.png" /> to finetune the network<br />
+We have 4 features: Open, High, Low, Close and set Window size = 10, so the input_shape is as follows:</p>
+<p><img alt="" src="https://i.imgur.com/6QEGdTR.png" /></p>
+<ul>
+<li>Window size: set to 10</li>
+</ul>
+<h4 id="step-6-connect-vectorize-trasform-with-timeseries-forecasting-neural-network-stage">Step 6: Connect Vectorize Trasform with <strong>TimeSeries Forecasting Neural Network</strong> stage</h4>
+<p><strong>TimeSeries Forecasting Neural Network</strong> will used the vectorized columns to predict Target Column  </p>
+<p><img alt="" src="https://i.imgur.com/QKt6xi3.png" /></p>
+<h4 id="step-7-click-run-to-display-results">Step 7: Click Run to display results.</h4></div>
             </div>
         </div>
 

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Scikit-learn Machine Learning Pipeline - DSSAMA Docs</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">DSSAMA Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../EN/en_getting_started/" class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_workspace/" class="dropdown-item">Workspace</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_flow/" class="dropdown-item">Flow</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_deep_learning_evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_deploy/" class="dropdown-item">Deploy</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Vietnamese <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../vn_getting_started" class="dropdown-item">Home</a>
+</li>
+                                    
+<li>
+    <a href="../vn_introduction/" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../vn_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../vn_workspace/" class="dropdown-item">Workspace</a>
+</li>
+                                    
+<li>
+    <a href="../vn_flow/" class="dropdown-item">Flow</a>
+</li>
+                                    
+<li>
+    <a href="../vn_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../vn_simpleflow/" class="dropdown-item">Simple Flow</a>
+</li>
+                                    
+<li>
+    <a href="../vn_deep_learning_evaluation/" class="dropdown-item">Deep Learning Evaluation</a>
+</li>
+                                    
+<li>
+    <a href="../vn_deploy/" class="dropdown-item">Deploy</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../vn_simpleflow/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../vn_machine_learning_pipeline_nltk/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#machine-learning-pipeline-with-scikitsama" class="nav-link">MACHINE LEARNING PIPELINE WITH SCIKITSAMA</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#scikitsama" class="nav-link">Scikitsama</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data-import-and-manipulation" class="nav-link">Data Import and manipulation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data-preprocessing" class="nav-link">Data Preprocessing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#supervised-modeling" class="nav-link">Supervised Modeling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#unsupervised-modeling" class="nav-link">Unsupervised Modeling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#evaluation" class="nav-link">Evaluation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="machine-learning-pipeline-with-scikitsama">MACHINE LEARNING PIPELINE WITH SCIKITSAMA</h1>
+<h2 id="scikitsama"><strong>Scikitsama</strong></h2>
+<p>Mục đích của hướng dẫn này là để minh họa một số tính năng chính scikit.sama cung cấp. </p>
+<h2 id="data-import-and-manipulation"><strong>Data Import and manipulation</strong></h2>
+<p>Từ các tập dataset đã đưa vào Data source, để sử dụng dataset đó trong Flow, người dùng cần import dữ liệu.
+Để import dữ liệu, người dùng sử dụng các stage Input lựa chọn từ nhóm stage Input. Với mỗi dạng data source sẽ có Stage import dữ liệu riêng , có các stage Input như sau:</p>
+<p><img alt="" src="https://i.imgur.com/JABhURb.png" /></p>
+<ul>
+<li>
+<p><code>Tabular Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng bảng.</p>
+</li>
+<li>
+<p><code>Text Input</code> : Stage input tương dữ liệu nguồn sử dụng là dạng text.</p>
+</li>
+<li><code>Timeseries Input</code> : Stage input cho dữ liệu nguồn sử dụng là dạng chuỗi thời gian.</li>
+<li><code>Image Input</code> : Stage input cho nguồn dữ liệu sử dụng là dạng ảnh.</li>
+<li><code>Image Input for Classification</code> : </li>
+<li><code>Image Input for Segmentation</code>:</li>
+<li><code>Maps Input</code> : Input dữ liệu thể hiện trên bản đồ.</li>
+<li><code>Scikit Iput</code> : Input dữ liệu dùng cho thư viện  scikit learn, có sẵn một số dataset kinh điển. Không cần phải tạo data source.</li>
+</ul>
+<p>### <strong>Các thao tác</strong></p>
+<p>Để import data vào grid flow editor: 
+1. Click lựa chọn stage Input phù hợp với data source đã tạo và muốn sử dụng( ví dụ đã tạo datasource tabular để sử dụng ta cần chọn Tabular Input )
+1. Click lại vào vùng grid để đưa stage Input đó vào
+1. Tùy chọn thuộc tính của stage ở menu phải stage properties
+1. Click <code>Run</code> để visualize data đưa vào và quan sát dữ liệu. </p>
+<h2 id="data-preprocessing"><strong>Data Preprocessing</strong></h2>
+<h3 id="transform">Transform</h3>
+<h4 id="1-normalize-transform">1. Normalize Transform</h4>
+<h5 id="11-mo-ta-thuat-toan">1.1.  Mô tả thuật toán</h5>
+<p>Preprocessing data: 
+https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-normalization</p>
+<h5 id="12-cac-buoc-thuc-hien">1.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" />
+- Bước 2: Trong package scikitsama.ml phần transform chọn Normalize Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:
+- Selected column: Fare</p>
+<p><img alt="" src="https://i.imgur.com/6lvrT8x.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Normalize Transform.
+Trong Normalize Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.normalize.html</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/dUEOftn.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/fI3YoPx.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/fLJYnFN.png" /></p>
+<h4 id="2-minmaxscaler-transform">2. MinMaxScaler Transform</h4>
+<h5 id="21-mo-ta-thuat-toan">2.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-scaler</p>
+<h5 id="22-cac-buoc-thuc-hien">2.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn MinMaxScaler Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Fare</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/IlRgECT.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage MinMaxScaler Transform.
+Trong MinMaxScaler Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/D8oL64Q.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/lCeCPsw.png0" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/sqj4PlV.png" /></p>
+<h4 id="3-standardscaler-transform">3. StandardScaler Transform</h4>
+<h5 id="31-mo-ta-thuat-toan">3.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-scaler
+1.3.2.  Các bước thực hiện</p>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn StandardScaler Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Pclass, Fare</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/mk1hXuk.png" /></p>
+<ul>
+<li>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage StandardScaler Transform.
+Trong StandardScaler Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/8ErZaK6.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/NQlVTsp.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/brgf6gg.png" /></p>
+<h4 id="4-label-encoder-transform">4. Label Encoder Transform</h4>
+<h5 id="41-mo-ta-thuat-toan">4.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/preprocessing_targets.html#preprocessing-targets</p>
+<h5 id="42-cac-buoc-thuc-hien">4.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Label Encoder Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Sex</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/D4pXiKy.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Label Encoder Transform.
+Trong Label Encoder Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/5bm66O1.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/aOxF1MO.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<h4 id="5-ordinal-encoder-transform">5. Ordinal Encoder Transform</h4>
+<h5 id="51-mo-ta-thuat-toan">5.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-categorical-features</p>
+<h5 id="52-cac-buoc-thuc-hien">5.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Ordinal Encoder Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Sex, Embarked</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/p0hYXPx.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Ordinal Encoder Transform.
+Trong Ordinal Encoder Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OrdinalEncoder.html</p>
+<p><img alt="" src="https://i.imgur.com/ktZUmE7.png" /></p>
+</li>
+<li>
+<p>Bước 4: Ấn Run để hiển thị ra kết quả</p>
+<p><img alt="" src="https://i.imgur.com/NwdFDq3.png" /></p>
+</li>
+<li>
+<p>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</p>
+<p><img alt="" src="https://i.imgur.com/sMqEQKP.png" /></p>
+</li>
+</ul>
+<h4 id="6-one-hot-encoder-transform">6. One Hot Encoder Transform</h4>
+<h5 id="61-mo-ta-thuat-toan">6.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing-categorical-features</p>
+<h5 id="62-cac-buoc-thuc-hien">6.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn One Hot Encoder Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Sex</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/ml1XuEj.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage One Hot Encoder Transform.
+Trong One Hot Encoder Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/xvEzdpk.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/CxwFTYx.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/FoFK80c.png" /></p>
+<h4 id="7-simple-imputer-transform">7. Simple Imputer Transform</h4>
+<h5 id="71-mo-ta-thuat-toan">7.1.  Mô tả thuật toán</h5>
+<p>Thuật toán được sử dụng để xử lý handle mising data.
+https://scikit-learn.org/stable/modules/impute.html#impute</p>
+<h5 id="72-cac-buoc-thuc-hien">7.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Simple Imputer Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Selected column: Age</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/NROC164.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Simple Imputer Transform.
+Trong Simple Imputer Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html</p>
+<p><img alt="" src="https://i.imgur.com/HFYbaGc.png" /></p>
+</li>
+<li>
+<p>Bước 4: Ấn Run để hiển thị ra kết quả</p>
+<p><img alt="" src="https://i.imgur.com/k1UMO6B.png" /></p>
+</li>
+<li>
+<p>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</p>
+<p><img alt="" src="https://i.imgur.com/Qw58ug4.png" /></p>
+</li>
+</ul>
+<h4 id="8-balances-transform">8. Balances Transform</h4>
+<h5 id="81-mo-ta-thuat-toan">8.1.  Mô tả thuật toán</h5>
+<p>https://imbalanced-learn.readthedocs.io/en/stable/api.html</p>
+<h5 id="82-cac-buoc-thuc-hien">8.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập Titanic(Link dataset: https://www.kaggle.com/c/titanic/data)</li>
+<li>Selected column: Pclass, Fare
+Ấn RUN để xem dữ liệu đầu vào:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/mTcDBcG.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Balances Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Handel method: Random_under_sampling</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/i4T7JyU.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Balances Transform.Trong Balances Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. (Chi tiết tại: https://imbalanced-learn.readthedocs.io/en/stable/api.html)</p>
+</li>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/01pkwKV.png" /></p>
+<h4 id="9-tfidf-transfrom">9. Tfidf Transfrom</h4>
+<h5 id="91-mo-ta-thuat-toan">9.1.  Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction</p>
+<h5 id="92-cac-buoc-thuc-hien">9.2.  Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Text Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li>Selected column: Content</li>
+<li>Start record: 0</li>
+<li>End record: 9</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/yk384ur.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Tfidf Transfrom bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/2C57MT0.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage Tfidf Transfrom.
+Trong Tfidf Transfrom có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/eoa9sZx.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/u1uYpLv.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/SUTtDDy.png" /></p>
+<h4 id="10-countvectorizer-transform">10.    CountVectorizer Transform</h4>
+<h5 id="101-mo-ta-thuat-toan">10.1. Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/feature_extraction.html#text-feature-extraction</p>
+<h5 id="102-cac-buoc-thuc-hien">10.2. Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Text Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/shineucc/bbc-news-dataset">BBC_News</a></li>
+<li>Selected column: Content</li>
+<li>Start record: 0</li>
+<li>End record: 9</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/yk384ur.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn CountVectorizer Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/qNQJ3Zp.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập BBC_News) vào stage CountVectorizer Transform.
+Trong CountVectorizer Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/UFdxjTu.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/eyjaQYS.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/LYzOwSF.png" /></p>
+<h4 id="11-vectorize-transform">11.    Vectorize Transform</h4>
+<h5 id="111-mo-ta-thuat-toan">11.1. Mô tả thuật toán</h5>
+<h5 id="112-cac-buoc-thuc-hien">11.2. Các bước thực hiện</h5>
+<ul>
+<li>
+<p>Bước 1: Chọn Tabular Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập <a href="https://www.kaggle.com/c/titanic/data">Titanic</a></li>
+<li>Selected column: Pclass, Sex, Age, SibSp, Parch, Fare, Embarked</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/Ti0bU17.png" /></p>
+</li>
+<li>
+<p>Bước 2: Trong package scikitsama.ml phần transform chọn Vectorize Transform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.
+Parameter:</p>
+<ul>
+<li>Column Vecterization: Pclass, Fare</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/JL3KOlu.png" /></p>
+</li>
+<li>
+<p>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Titanic) vào stage Vectorize Transform.
+Trong Vectorize Transform có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. </p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/pmTmhI7.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/bCFzSte.png" /></p>
+<h2 id="supervised-modeling"><strong>Supervised Modeling</strong></h2>
+<h3 id="1-classification">1. Classification</h3>
+<p>Sử dụng các thuật toán <em>Supervised Learning</em> để phân lớp. Trong phần này sẽ sử dụng trực tiếp tập dữ liệu Iris trong phần Input của <strong>Scikit.sama</strong> để phân lớp. Đây là bộ dataset đã được tiền xử lý gồm 4 features: sepal length (cm), sepal width (cm), petal length (cm) và petal width (cm). Target của bộ dữ liệu là từ 4 features có thể dự đoán được nó thuộc loại hoa Iris nào trong 3 loại hoa đã được encode.</p>
+<p><img alt="" src="https://i.imgur.com/dxKBdaZ.png" /></p>
+<ul>
+<li>Chọn biếu tượng <img alt="" src="https://i.imgur.com/lEcJJmZ.png" /> để chia dữ liệu thành tập train và test.
+Mặc định là 0.7 cho train và 0.3 cho test:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/PAy2e9d.png" /></p>
+<ul>
+<li>Ấn <strong>Run</strong> để xem dữ liệu</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/AdPcjln.png" /></p>
+<h4 id="11-decision-tree-classifier">1.1.   Decision Tree Classifier</h4>
+<h5 id="111-mo-ta-thuat-toan_1">1.1.1.    Mô tả thuật toán</h5>
+<p><a href="https://scikit-learn.org/stable/modules/tree.html#tree">Thuật toán Decision Tree Classifier</a></p>
+<h5 id="112-cac-buoc-thuc-hien_1">1.1.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần classification chọn Decision Tree Classifier bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/JnqAEIP.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Iris) vào stage Decision Tree Classifier.
+Trong Decision Tree Classifier có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/g7gpwNB.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/CW9ZfRS.png" /></p>
+<ul>
+<li>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/n0AfmMj.png" /></p>
+<p><img alt="" src="https://i.imgur.com/LueOX8C.png" /></p>
+</li>
+<li>
+<p>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</p>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/9KI8kve.png" /></p>
+<h3 id="2-regression">2. Regression</h3>
+<p>Sử dụng các thuật toán Supervised Learning để dự đoán. Trong phần này sẽ sử dụng trực tiếp tập dữ liệu Boston trong phần Input của Scikitsama để thực hiện. Bộ dataset gồm:
+-   id: là cột index của dataframe
+-   CRIM, ZN, INDUS, CHAS, NOX, RM, AGE, DIS, RAD, TAX, PTRATIO, B, LSTAT là các features(thông tin chi tiết: https://scikit-learn.org/stable/datasets/index.html#boston-dataset)
+-   target Giá trị trung vị của các ngôi nhà với đơn vị là nghìn đô la</p>
+<p><img alt="" src="https://i.imgur.com/QrmcvLl.png" /></p>
+<ul>
+<li>Chọn biếu tượng <img alt="" src="https://i.imgur.com/WtZms6B.png" /> để chia dữ liệu thành tập train và test.</li>
+</ul>
+<p>Mặc định là 0.7 cho train và 0.3 cho test:</p>
+<p><img alt="" src="https://i.imgur.com/i768ePf.png" />                                                                     <br />
+-   Ấn Run để xem dữ liệu:</p>
+<p><img alt="" src="https://i.imgur.com/NggPcCn.png" /></p>
+<h4 id="21-decision-tree-regression">2.1.   Decision Tree Regression</h4>
+<h5 id="211-mo-ta-thuat-toan">2.1.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/tree.html#regression</p>
+<h5 id="212-cac-buoc-thuc-hien">2.1.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn Decision Tree Regression bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/1rRFfzk.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage Decision Tree Regression.
+Trong Decision Tree Regression có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/SpjSK1W.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="blob:https://imgur.com/3b06032f-24f7-46ff-9172-65853ba14d37" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/mGYXlf5.png" /></p>
+<p><img alt="" src="https://i.imgur.com/pADHtlK.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/eSjkZmD.png" /></p>
+<h4 id="22-gbt-regression">2.2.   GBT Regression</h4>
+<h5 id="221-mo-ta-thuat-toan">2.2.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/ensemble.html#regression</p>
+<h5 id="222-cac-buoc-thuc-hien">2.2.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn GBT Regression bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/1CHpytS.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage GBT Regression.
+Trong GBT Regression có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingRegressor.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/xPHmZCv.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/FN4Y2S1.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/kAsvVSm.png" /></p>
+<p><img alt="" src="https://i.imgur.com/sILIuMt.png" />
+-   Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</p>
+<p><img alt="" src="https://i.imgur.com/MkgXnKu.png" /></p>
+<h4 id="23-isotonic-regression">2.3.   Isotonic Regression</h4>
+<h5 id="231-mo-ta-thuat-toan">2.3.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/isotonic.html</p>
+<h5 id="232-cac-buoc-thuc-hien">2.3.2.    Các bước thực hiện</h5>
+<p><strong>Lưu ý: Thuật toán này, datadet chỉ gồm 1 feature</strong>
+-   Bước 1: Chọn Tabular Input trong Input.Phần parameter:
+    - Dataset: Ở đây dùng tập Boston
+    - Selected column: CRIM (với thuật toán này chỉ chọn 1 feature)
+Ấn RUN để xem dữ liệu đầu vào:</p>
+<p><img alt="" src="https://i.imgur.com/SSoTSaF.png" /></p>
+<ul>
+<li>Bước 2: Trong package scikitsama.ml phần regression chọn Isotonic Regression bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/O5ba4ta.png" /></p>
+<ul>
+<li>Bước 3: Nối Tabular Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage Isotonic Regression.
+Trong Isotonic Regression có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.isotonic.IsotonicRegression.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/VBjuUoj.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/p25JPdT.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/OVW99L8.png" /></p>
+<p><img alt="" src="https://i.imgur.com/cnd0Xbg.png" /></p>
+<ul>
+<li>Bước 5: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/PDngwgg.png" /></p>
+<h4 id="24-linear-regression">2.4.   Linear Regression</h4>
+<h5 id="241-mo-ta-thuat-toan">2.4.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/linear_model.html</p>
+<h5 id="242-cac-buoc-thuc-hien">2.4.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn Linear Regression bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/6PjybpS.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage Linear Regression.
+Trong Linear Regression có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/Dm4SM0p.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/z3uiFCJ.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/amQkbII.png" /></p>
+<p><img alt="" src="https://i.imgur.com/1HwhmxW.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/uuh8lcf.png" /></p>
+<h4 id="25-linearsvr-regressor">2.5.   LinearSVR Regressor</h4>
+<h5 id="251-mo-ta-thuat-toan">2.5.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVR.html#sklearn.svm.LinearSVR</p>
+<h5 id="252-cac-buoc-thuc-hien">2.5.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn LinearSVR Regressor bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/ItXUwEl.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage LinearSVR Regressor.
+Trong LinearSVR Regressor có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.svm.LinearSVR.html#sklearn.svm.LinearSVR</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/aVPuhc2.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/95yxP1S.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/igJ9QhX.png" /></p>
+<p><img alt="" src="https://i.imgur.com/pUT76cZ.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/rFKXfdP.png" /></p>
+<h4 id="26-random-forest-regressor">2.6.   Random Forest Regressor</h4>
+<h5 id="261-mo-ta-thuat-toan">2.6.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/ensemble.html#forest</p>
+<h5 id="262-cac-buoc-thuc-hien">2.6.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn Random Forest Regressor bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/sSHAzEB.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage Random Forest Regressor.
+Trong Random Forest Regressor có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/ChP9ZFU.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/jiWDMjP.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/mPyBTI6.png" /></p>
+<p><img alt="" src="https://i.imgur.com/fLSbyyd.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/5sHI0CJ.png" /></p>
+<h4 id="27-svr-regressor">2.7.   SVR Regressor</h4>
+<h5 id="271-mo-ta-thuat-toan">2.7.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/svm.html#svm-regression</p>
+<h5 id="272-cac-buoc-thuc-hien">2.7.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần regression chọn SVR Regressor bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/tJsBWfn.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Boston) vào stage SVR Regressor.
+Trong SVR Regressor có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/iCOFNuP.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/r5Bxt8J.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/8rKM1f2.png" /></p>
+<p><img alt="" src="https://i.imgur.com/eRKcQgB.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/abKTPUI.png" /></p>
+<h2 id="unsupervised-modeling"><strong>Unsupervised Modeling</strong></h2>
+<h3 id="1-clustering">1.  Clustering</h3>
+<p>Sử dụng các thuật toán Unsupervised Learning để phân cụm. Trong phần này sẽ sử dụng trực tiếp tập dữ liệu Iris trong phần Input của Scikitsama để phân cụm. Đây là bộ dataset đã được tiền xử lý gồm 4 features: sepal length (cm), sepal width (cm), petal length (cm) và petal width (cm). Target của bộ dữ liệu là từ 4 features có thể dự đoán được nó thuộc loại hoa Iris nào trong 3 loại hoa đã được encode.</p>
+<p><img alt="" src="https://i.imgur.com/kwKXHfM.png" /></p>
+<ul>
+<li>Chọn biếu tượng <img alt="" src="https://i.imgur.com/WtZms6B.png" /> để chia dữ liệu thành tập train và test.</li>
+</ul>
+<p>Mặc định là 0.7 cho train và 0.3 cho test:
+                                                <img alt="" src="https://i.imgur.com/7BnNCFJ.png" />                            </p>
+<ul>
+<li>Ấn Run để xem dữ liệu:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/fWCFAHd.png" /></p>
+<h4 id="11-k-means-clustering">1.1.   K-Means Clustering</h4>
+<h5 id="111-mo-ta-thuat-toan_2">1.1.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/clustering.html#k-means</p>
+<h5 id="112-cac-buoc-thuc-hien_2">1.1.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần clustering chọn K-Means Clustering bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/Rb5OqCP.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Iris) vào stage K-Means Clustering.
+Trong K-Means Clustering có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/x3XV9Up.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/gbCqe0W.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/BRacFcW.png" /></p>
+<p><img alt="" src="https://i.imgur.com/DE4ySCD.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/qcBkAcJ.png" /></p>
+<h4 id="12-gausianmixtrure-clustering">1.2.   GausianMixtrure Clustering</h4>
+<h5 id="121-mo-ta-thuat-toan">1.2.1.    Mô tả thuật toán</h5>
+<p>https://scikit-learn.org/stable/modules/mixture.html#gmm</p>
+<h5 id="122-cac-buoc-thuc-hien">1.2.2.    Các bước thực hiện</h5>
+<ul>
+<li>Bước 1: Trong package scikitsama.ml phần clustering chọn GausianMixtrure Clustering bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/9KlvgAR.png" /></p>
+<ul>
+<li>Bước 2: Nối Scikit Input(là tập dataset cho bài toán như đã nói ở bên trên là tập Iris) vào stage GausianMixtrure Clustering.
+Trong GausianMixtrure Clustering có các tham số để lựa chọn tuỳ thuộc vào từng bài toán. Ý nghĩa của từng tham số có thể xem thông tin chi tiết tại: https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/LyCTVO1.png" /></p>
+<ul>
+<li>Bước 3: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/LkFtG9N.png" /></p>
+<p>Kết quả nhìn vào bảng Metrics table và 2 cột target và y_pred để xem kết quả</p>
+<p><img alt="" src="https://i.imgur.com/ARumonx.png" /></p>
+<p><img alt="" src="https://i.imgur.com/gP5KEYq.png" /></p>
+<ul>
+<li>Bước 4: Model sẽ được tự động lưu lại sau khi train xong và được đánh dấu tích màu xanh bên dưới</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/c07oADE.png" /></p>
+<h2 id="evaluation"><strong>Evaluation</strong></h2></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

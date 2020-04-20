@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Workspace - DSSAMA Docs</title>
+        <title>Pyvi Tutorial - DSSAMA Docs</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -95,7 +95,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Workspace</a>
+    <a href="../vn_workspace/" class="dropdown-item">Workspace</a>
 </li>
                                     
 <li>
@@ -115,7 +115,7 @@
 </li>
                                     
 <li>
-    <a href="../vn_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+    <a href="./" class="dropdown-item active">Pyvi Tutorial</a>
 </li>
                                     
 <li>
@@ -140,12 +140,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../vn_tutorial/" class="nav-link">
+                                <a rel="prev" href="../vn_machine_learning_pipeline_nltk/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../vn_flow/" class="nav-link">
+                                <a rel="next" href="../vn_simpleflow/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -166,12 +166,149 @@
     
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#machine-learing-nlp-pyvisama" class="nav-link">MACHINE LEARING  - NLP - PYVISAMA</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#1-add-accents-transformer" class="nav-link">1.   Add Accents Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#2-remove-accents-transformer" class="nav-link">2.   Remove Accents Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#3-vipostagger-transformer" class="nav-link">3.   ViPosTagger Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#4-vitokenizer-transformer" class="nav-link">4.   ViTokenizer Transformer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-</div>
+<h1 id="machine-learing-nlp-pyvisama">MACHINE LEARING  - NLP - PYVISAMA</h1>
+<h2 id="1-add-accents-transformer">1.   Add Accents Transformer</h2>
+<ul>
+<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
+<li>Dataset: Ở đây dùng tập VLSP 2016 dataset (Link dataset:). Tập dataset này gồm 3 cột. Cột thứ nhất là index, cột thứ 2 là nội dung đánh giá về sản phẩm của khách hàng, cột thứ 3 là label(đánh giá của khách hàng gồm 3 mức: POS, NEG, NEU)</li>
+<li>Selected column: sentence</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/v8b8KQJ.png" /></p>
+<p>Ấn RUN để xem dữ liệu đầu vào:  </p>
+<p><img alt="" src="https://i.imgur.com/dU0lbNT.png" /></p>
+<ul>
+<li>Bước 2: Trong package pyvisama  chọn Remove Accents Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Bước này dùng để xoá dấu tiếng Việt.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/0Etu8DK.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập VLSP 2016 dataset) vào stage Remove Accents Transformer. </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/irX2e7V.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/ygCecfu.png" /></p>
+<ul>
+<li>Bước 5: Trong package pyvisama  chọn Add Accents Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Bước này để thêm lại dấu cho tiếng Việt.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/CDY2nB7.png" /></p>
+<ul>
+<li>Bước 6: Nối Remove Accents Transformer vào stage Add Accents Transformer. </li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/NlVS2WP.png" /></p>
+<ul>
+<li>Bước 7: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/V7rEqU9.png" /></p>
+<h2 id="2-remove-accents-transformer">2.   Remove Accents Transformer</h2>
+<ul>
+<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
+<li>Dataset: Ở đây dùng tập VLSP 2016 dataset (Link dataset:). Tập dataset này gồm 3 cột. Cột thứ nhất là index, cột thứ 2 là nội dung đánh giá về sản phẩm của khách hàng, cột thứ 3 là label(đánh giá của khách hàng gồm 3 mức: POS, NEG, NEU)</li>
+<li>Selected column: sentence</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/5U7L0li.png" /></p>
+<p>Ấn RUN để xem dữ liệu đầu vào:  </p>
+<p><img alt="" src="https://i.imgur.com/YNX6RwR.png" /></p>
+<ul>
+<li>Bước 2: Trong package pyvisama  chọn Remove Accents Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/39jGZtu.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập VLSP 2016 dataset) vào stage Remove Accents Transformer</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/DSKAKSD.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/N0Kcabs.png" /></p>
+<h2 id="3-vipostagger-transformer">3.   ViPosTagger Transformer</h2>
+<ul>
+<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
+<li>Dataset: Ở đây dùng tập VLSP 2016 dataset (Link dataset:). Tập dataset này gồm 3 cột. Cột thứ nhất là index, cột thứ 2 là nội dung đánh giá về sản phẩm của khách hàng, cột thứ 3 là label(đánh giá của khách hàng gồm 3 mức: POS, NEG, NEU)</li>
+<li>Selected column: sentence
+<img alt="" src="https://i.imgur.com/fgTvOAe.png" /></li>
+</ul>
+</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:  </p>
+<p><img alt="" src="https://i.imgur.com/oTPbc5z.png" /></p>
+<ul>
+<li>Bước 2: Trong package pyvisama  chọn ViTokenizer Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Bước này dùng để tách từ trong tiếng Việt.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/KHoA8ii.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập VLSP 2016 dataset) vào stage ViTokenizer Transformer.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/3IaY5AQ.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/g4Esw7r.png" /></p>
+<ul>
+<li>Bước 5: Trong package pyvisama  chọn ViPosTagger Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Bước này xác định xem từ vừa tách bên trên thuộc loại từ nào.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/cuCv9VV.png" /></p>
+<ul>
+<li>Bước 6: Nối ViTokenizer Transformer vào stage ViPosTagger Transformer.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/5gaiU2A.png" /></p>
+<ul>
+<li>Bước 7: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/mDb5xZg.png" /></p>
+<h2 id="4-vitokenizer-transformer">4.   ViTokenizer Transformer</h2>
+<ul>
+<li>Bước 1: Chọn Text Input trong Input.Phần parameter:<ul>
+<li>Dataset: Ở đây dùng tập VLSP 2016 dataset (Link dataset:). Tập dataset này gồm 3 cột. Cột thứ nhất là index, cột thứ 2 là nội dung đánh giá về sản phẩm của khách hàng, cột thứ 3 là label(đánh giá của khách hàng gồm 3 mức: POS, NEG, NEU)</li>
+<li>Selected column: sentence</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/xOdPLQZ.png" /></p>
+<p>Ấn RUN để xem dữ liệu đầu vào:  </p>
+<p><img alt="" src="https://i.imgur.com/NqmwNOi.png" /></p>
+<ul>
+<li>Bước 2: Trong package pyvisama  chọn ViTokenizer Transformer bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/6gCWWMr.png" /></p>
+<ul>
+<li>Bước 3: Nối Text Input(là tập dataset cho bài toán như đã nói ở bên trên là tập VLSP 2016 dataset) vào stage ViTokenizer Transformer.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/nms2Eds.png" /></p>
+<ul>
+<li>Bước 4: Ấn Run để hiển thị ra kết quả</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/3FdE31h.png" /></p></div>
             </div>
         </div>
 

@@ -38,15 +38,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../EN/en_getting_started.md" class="dropdown-item">Home</a>
-</li>
-                                    
-<li>
-    <a href="../../EN/en_index/" class="dropdown-item">Index</a>
+    <a href="../../EN/en_getting_started/" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
     <a href="../../EN/en_tutorial/" class="dropdown-item">Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_workspace/" class="dropdown-item">Workspace</a>
 </li>
                                     
 <li>
@@ -58,7 +58,19 @@
 </li>
                                     
 <li>
-    <a href="../../EN/en_machine-learning-pipeline/" class="dropdown-item">Machine Learning Pipeline</a>
+    <a href="../../EN/en_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../../EN/en_simpleflow/" class="dropdown-item">Simple Flow</a>
 </li>
                                     
 <li>
@@ -71,7 +83,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../vn_getting-started" class="dropdown-item">Home</a>
+    <a href="../vn_getting_started" class="dropdown-item">Home</a>
 </li>
                                     
 <li>
@@ -95,7 +107,19 @@
 </li>
                                     
 <li>
-    <a href="../vn_machine_learning_pipeline/" class="dropdown-item">MachineLearningPipeline</a>
+    <a href="../vn_machine_learning_pipeline_scikitsama/" class="dropdown-item">Scikit-learn Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_machine_learning_pipeline_nltk/" class="dropdown-item">NLTK Machine Learning Pipeline</a>
+</li>
+                                    
+<li>
+    <a href="../vn_pyvisama/" class="dropdown-item">Pyvi Tutorial</a>
+</li>
+                                    
+<li>
+    <a href="../vn_simpleflow/" class="dropdown-item">Simple Flow</a>
 </li>
                                     
 <li>
@@ -116,7 +140,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../vn_machine_learning_pipeline/" class="nav-link">
+                                <a rel="prev" href="../vn_simpleflow/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -175,18 +199,22 @@
 <h2 id="1-image-classification-neural-network">1.   Image Classification Neural Network</h2>
 <h3 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h3>
 <ul>
-<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
-<img alt="" src="https://i.imgur.com/8GQbgzS.png" /></li>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/8GQbgzS.png" /></p>
+<ul>
 <li>Ấn <strong>RUN</strong> để xem dữ liệu đầu vào:  </li>
 </ul>
 <h3 id="buoc-2-trong-package-tfsama-chon-image">Bước 2: Trong package tfsama  chọn Image</h3>
 <p>Classification Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage.</p>
-<p>Trong Image Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
-<img alt="" src="https://i.imgur.com/8yYdLj1.png" />
-- Layer: dùng để cấu hình Network bằng file Json bằng cách click chuột vào <img alt="" src="https://i.imgur.com/ptj8wFq.png" />
-Ở dây với tập dataset có 3 lớp gồm 1500 ảnh màu (RGB) ta sẽ cấu hình như sau:
-<img alt="" src="https://i.imgur.com/z9LYtN3.png" />
-Còn các tham số khác để mặc định</p>
+<p>Trong Image Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:</p>
+<p><img alt="" src="https://i.imgur.com/8yYdLj1.png" /></p>
+<ul>
+<li>Layer: dùng để cấu hình Network bằng file Json bằng cách click chuột vào <img alt="" src="https://i.imgur.com/ptj8wFq.png" />
+Ở dây với tập dataset có 3 lớp gồm 1500 ảnh màu (RGB) ta sẽ cấu hình như sau:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/z9LYtN3.png" /></p>
+<p>Còn các tham số khác để mặc định</p>
 <h3 id="buoc-3-noi-image-input-for-classification-vao-stage-image-classification-neural-network">Bước 3: Nối Image Input for Classification vào stage Image Classification Neural Network</h3>
 <p><img alt="" src="https://i.imgur.com/n6ZTB5U.png" /></p>
 <h3 id="buoc-4-an-run-e-hien-thi-ra-ket-qua">Bước 4: Ấn Run để hiển thị ra kết quả</h3>
@@ -196,19 +224,23 @@ Còn các tham số khác để mặc định</p>
 <h3 id="22-cac-buoc-thuc-hien">2.2.    Các bước thực hiện</h3>
 <h4 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter_1">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h4>
 <ul>
-<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
-<img alt="" src="https://i.imgur.com/yjVt51K.png" /></li>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yjVt51K.png" /></p>
+<ul>
 <li>Ấn RUN để xem dữ liệu đầu vào:  </li>
 </ul>
 <h4 id="buoc-2-chon-desennet">Bước 2: Chọn DesenNet</h4>
-<p>Trong package tfsama  chọn DenseNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong DenseNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
-<img alt="" src="https://i.imgur.com/0kk5krG.png" />
-- Architecture: Chọn kiến trúc mạng DenseNet phù hợp.
-- Input_shape: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình đầu vào cho kiến trúc DenseNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:
-<img alt="" src="https://i.imgur.com/l6S5uah.png" />
-- Top Layers: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.
-<img alt="" src="https://i.imgur.com/3UrL1iZ.png" />
-- Các tham số còn lại để mặc định hoặc tuỳ người dùng config</p>
+<p>Trong package tfsama  chọn DenseNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong DenseNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:</p>
+<p><img alt="" src="https://i.imgur.com/0kk5krG.png" /></p>
+<ul>
+<li>Architecture: Chọn kiến trúc mạng DenseNet phù hợp.</li>
+<li>Input_shape: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình đầu vào cho kiến trúc DenseNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:
+<img alt="" src="https://i.imgur.com/l6S5uah.png" /></li>
+<li>Top Layers: Click vào <strong>CONFIGURATION</strong> dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.
+<img alt="" src="https://i.imgur.com/3UrL1iZ.png" /></li>
+<li>Các tham số còn lại để mặc định hoặc tuỳ người dùng config</li>
+</ul>
 <h4 id="buoc-3-noi-image-input-for-classification-vao-stage-densenet">Bước 3: Nối <strong>Image Input for Classification</strong> vào stage <strong>DenseNet</strong></h4>
 <p><img alt="" src="https://i.imgur.com/nW4ya9W.png" /></p>
 <h4 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_1">Bước 4: Ấn Run để hiển thị ra kết quả</h4>
@@ -218,19 +250,25 @@ Còn các tham số khác để mặc định</p>
 <h3 id="32-cac-buoc-thuc-hien">3.2.    Các bước thực hiện</h3>
 <h4 id="buoc-1-chon-image-input-for-classification-trong-inputphan-parameter_2">Bước 1: Chọn Image Input for Classification trong Input.Phần parameter:</h4>
 <ul>
-<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.
-<img alt="" src="https://i.imgur.com/yjVt51K.png" /></li>
+<li>Dataset: Ở đây dùng tập Cifar10 dataset (Link dataset: https://www.kaggle.com/c/cifar-10/data). Tập dataset này sau khi tải về đã được điều chỉnh để phù hợp với việc chạy thử gồm 3 lớp: bird, cat và dog. Mỗi lớp gồm 5000 image để train và test.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/yjVt51K.png" /></p>
+<ul>
 <li>Ấn RUN để xem dữ liệu đầu vào: </li>
 </ul>
 <h4 id="buoc-2-chon-mobilenet">Bước 2: Chọn MobileNet</h4>
-<p>Trong package tfsama  chọn MobileNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong MobileNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
-<img alt="" src="https://i.imgur.com/7TKLssm.png" />
-- Architecture: Chọn kiến trúc mạng MobileNet phù hợp.
-- Input_shape: Click vào CONFIGURATION dùng để cấu hình đầu vào cho kiến trúc MobileNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:
-<img alt="" src="https://i.imgur.com/tpXgGWj.png" />
-- Top Layers: Click vào CONFIGURATION dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.
-<img alt="" src="https://i.imgur.com/7vGKEH5.png" />
-•   Các tham số còn lại để mặc định hoặc tuỳ người dùng config</p>
+<p>Trong package tfsama  chọn MobileNet bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong MobileNet người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:</p>
+<p><img alt="" src="https://i.imgur.com/7TKLssm.png" /></p>
+<ul>
+<li>Architecture: Chọn kiến trúc mạng MobileNet phù hợp.</li>
+<li>Input_shape: Click vào CONFIGURATION dùng để cấu hình đầu vào cho kiến trúc MobileNet đã build sẵn.Ở đây với tập Cifar dataset(32x32x3) ta cấu hình như sau:</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/tpXgGWj.png" /></p>
+<ul>
+<li>Top Layers: Click vào CONFIGURATION dùng để cấu hình cho lớp Fully Connected của Network ở đây với tập Cifar dataset đã như trên gồm 3 lớp ta sẽ có mẫu cấu hình tham khảo như sau: với units trong khoanh tròn đỏ là số lượng lớp cần phân lớp.</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/7vGKEH5.png" /></p>
+<p>•   Các tham số còn lại để mặc định hoặc tuỳ người dùng config</p>
 <h4 id="buoc-3-noi-image-input-for-classification-vao-stage-mobilenet">Bước 3: Nối Image Input for Classification vào stage MobileNet</h4>
 <p><img alt="" src="https://i.imgur.com/s3B8hZ8.png" /></p>
 <h4 id="buoc-4-an-run-e-hien-thi-ra-ket-qua_2">Bước 4: Ấn Run để hiển thị ra kết quả</h4>
@@ -239,13 +277,13 @@ Còn các tham số khác để mặc định</p>
 <ul>
 <li>Chọn Tabular Input trong Input.Phần parameter:</li>
 <li>Dataset: Ở đây dùng tập Iris dataset (Link dataset: https://www.kaggle.com/arshid/iris-flower-dataset). Tập dataset này được xử lý gồm 6 cột. Cột thứ nhất là index, cột thứ 2,3,4, 5 là các đặc trăng của hoa gồm: Petal Length, Petal Width, Sepal Length, Sepal width. Cột thứ 6 là label gồm 3 lớp tương ứng với 3 loại hoa Iris.</li>
-<li>Selected column: Petal Length, Petal Width, Sepal Length, Sepal width
-<img alt="" src="https://i.imgur.com/2MG38Rl.png" /></li>
-<li>Ấn RUN để xem dữ liệu đầu vào:  </li>
+<li>Selected column: Petal Length, Petal Width, Sepal Length, Sepal width</li>
 </ul>
+<p><img alt="" src="https://i.imgur.com/2MG38Rl.png" />
+- Ấn RUN để xem dữ liệu đầu vào:  </p>
 <h3 id="buoc-2-chon-tabulardata-classification-neural-network">Bước 2: Chọn <strong>TabularData Classification Neural Network</strong></h3>
-<p>Trong package tfsama chọn TabularData Classification Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong TabularData Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:
-<img alt="" src="https://i.imgur.com/ZZMWf04.png" /></p>
+<p>Trong package tfsama chọn TabularData Classification Neural Network bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong TabularData Classification Neural Network người dùng cần tuỳ chỉnh các parameter cho phù hợp với bài toán của mình:</p>
+<p><img alt="" src="https://i.imgur.com/ZZMWf04.png" /></p>
 <ul>
 <li>Layer: dùng để cấu hình Network bằng file Json bằng cách click chuột vào <img alt="" src="https://i.imgur.com/ptj8wFq.png" /></li>
 </ul>
@@ -260,13 +298,17 @@ Còn các tham số khác để mặc định</p>
 <h2 id="7-timeseries-forecasting-neural-network">7.   TimeSeries Forecasting Neural Network</h2>
 <h3 id="buoc-1-chon-stage-input_1">Bước 1: Chọn stage Input</h3>
 <ul>
-<li>Chọn Timeseries Input trong Input.Phần parameter:
-•   Dataset: Ở đây dùng tập Google Stock dataset (Link dataset: https://www.kaggle.com/medharawat/google-stock-price). Tập dataset này gồm 6 cột: Date, Open, High, Low, Close, Volume
-•   Time steps column: Date
-•   Selected column: Open, High, Low, Close, Volume
-<img alt="" src="https://i.imgur.com/mzkgRE9.png" />
-Ấn RUN để xem dữ liệu đầu vào:  </li>
+<li>
+<p>Chọn Timeseries Input trong Input.Phần parameter:</p>
+<ul>
+<li>Dataset: Ở đây dùng tập Google Stock dataset (Link dataset: https://www.kaggle.com/medharawat/google-stock-price). Tập dataset này gồm 6 cột: Date, Open, High, Low, Close, Volume</li>
+<li>Time steps column: Date</li>
+<li>Selected column: Open, High, Low, Close, Volume</li>
 </ul>
+<p><img alt="" src="https://i.imgur.com/mzkgRE9.png" /></p>
+</li>
+</ul>
+<p>Ấn RUN để xem dữ liệu đầu vào:  </p>
 <h3 id="buoc-2-chon-vectorize-trasform">Bước 2: Chọn <strong>Vectorize Trasform</strong></h3>
 <ul>
 <li>Trong package scikitsama chọn Vectorize Trasform bằng cách kích chuột vào nó và sau đó di chuột ra màn hình làm việc, kích chuột vào vị trí cần đặt stage. Trong Vectorize Trasform có parameter Vectorize Column để chọn các cột cần vector hoá.Ở đây ta chọn: Open, High, Low, Close</li>
@@ -282,12 +324,14 @@ Còn các tham số khác để mặc định</p>
 <li><em>Layer</em>: dùng để cấu hình Network bằng file Json bằng cách click chuột vào 
 <img alt="" src="https://i.imgur.com/ptj8wFq.png" /></li>
 </ul>
-<p>Ở đây thấy trong Vectorize Trasform ta có 4 feature: Open, High, Low, Close. Đồng thời chọn Window size = 10 còn các tham số khác để mặc định nên ta có config như sau:
-https://i.imgur.com/6QEGdTR.png
-- <em>Window size</em>: tham số này cũng phải đặt tương ứng với Window size trong file config là: 10</p>
+<p>Ở đây thấy trong Vectorize Trasform ta có 4 feature: Open, High, Low, Close. Đồng thời chọn Window size = 10 còn các tham số khác để mặc định nên ta có config như sau:</p>
+<p><img alt="" src="https://i.imgur.com/6QEGdTR.png" /></p>
+<ul>
+<li><em>Window size</em>: tham số này cũng phải đặt tương ứng với Window size trong file config là: 10</li>
+</ul>
 <h3 id="buoc-6-noi-vectorize-trasform-vao-stage-timeseries-forecasting-neural-network">Bước 6: Nối <strong>Vectorize Trasform</strong> vào stage <strong>TimeSeries Forecasting Neural Network</strong>.</h3>
-<p><strong>TimeSeries Forecasting Neural Network</strong> sẽ dùng các cột được Vectorize để dự đoán ra các cột Target Column
-<img alt="" src="https://i.imgur.com/QKt6xi3.png" /></p>
+<p><strong>TimeSeries Forecasting Neural Network</strong> sẽ dùng các cột được Vectorize để dự đoán ra các cột Target Column</p>
+<p><img alt="" src="https://i.imgur.com/QKt6xi3.png" /></p>
 <h3 id="buoc-7-an-run-e-hien-thi-ra-ket-qua">Bước 7: Ấn Run để hiển thị ra kết quả</h3></div>
             </div>
         </div>
